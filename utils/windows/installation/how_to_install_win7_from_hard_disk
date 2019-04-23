@@ -1,0 +1,6 @@
+Sometimes you may encounter problems like your "PE" doesn't work, under such circumstance, the following steps may help:
+1. Copy boot folder and bootmgr from the installation iso to drive C (let's say you want to use C as sys drive)
+2. Copy all the files from iso file to your hard disk (different drive on your local machine)
+3. Create "sources" folder on your drive C and copy "install.wim, boot.wim" from iso file to it
+4. Start->run->cmd   "c:\boot\bootsect.exe /nt60 c:"
+5. If the system prompt something relates to "successfully", its done.

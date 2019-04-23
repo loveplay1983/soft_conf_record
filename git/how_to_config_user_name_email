@@ -1,0 +1,22 @@
+
+
+There are 3 levels of git config; project, global and system.
+
+    project: Project configs are only available for the current project and stored in .git/config in the project's directory.
+    global: Global configs are available for all projects for the current user and stored in ~/.gitconfig.
+    system: System configs are available for all the users/projects and stored in /etc/gitconfig.
+
+Create a project specific config, you have to execute this under the project's directory:
+
+$ git config user.name "John Doe" 
+
+Create a global config:
+
+$ git config --global user.name "John Doe"
+
+Create a system config:
+
+$ git config --system user.name "John Doe" 
+
+And as you may guess, project overrides global and global overrides system.
+

@@ -1,0 +1,13 @@
+You have this command:
+
+ed2k - aMule eD2k link parser
+
+and it comes with the amule-utils package
+
+sudo apt install amule-utils 
+if you have a list ed2k links (separated by newlines) from emule or other client you can just use xargs:
+
+cat links.txt | xargs -L1 ed2k
+For this to work amule or amuled need to be already started, you will see the files were added in the aMule Log tab
+
+BTW if you have ' (single quotes) characters in the ed2k link you need to replace them with escaped once \'

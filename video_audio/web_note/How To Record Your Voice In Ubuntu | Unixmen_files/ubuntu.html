@@ -1,0 +1,2653 @@
+
+<!doctype html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+    <title>Home | Unixmen</title>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="https://www.unixmen.com/xmlrpc.php" />
+    		<style type="text/css"></style>
+	
+			<style type="text/css">
+						</style>
+	<link rel="icon" type="image/png" href="https://s24255.pcdn.co/wp-content/uploads/2016/02/favicon.png">
+<!-- This site is optimized with the Yoast SEO plugin v9.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.unixmen.com/" />
+<link rel="publisher" href="https://plus.google.com/+Unixmen/posts"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Home | Unixmen" />
+<meta name="twitter:site" content="@unixmen" />
+<meta name="twitter:image" content="https://s24255.pcdn.co/wp-content/uploads/2016/02/unixmen-logo-footer-retina.png" />
+<meta name="twitter:creator" content="@unixmen" />
+<script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.unixmen.com/#website","url":"https://www.unixmen.com/","name":"Unixmen","potentialAction":{"@type":"SearchAction","target":"https://www.unixmen.com/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<meta name="msvalidate.01" content="A6C1836971BE5FD75A285DB1DAAD1537" />
+<meta name="google-site-verification" content="6OsOjHg6vQuqFD5UMbLhKnbMSvTpvbvJFf6ARMka-hE" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Unixmen &raquo; Feed" href="https://www.unixmen.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Unixmen &raquo; Comments Feed" href="https://www.unixmen.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s24255.pcdn.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=2398cf47d310762017a7537a4efdd57b"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='https://s24255.pcdn.co/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='gpf-feeds-css'  href='https://s24255.pcdn.co/wp-content/plugins/custom-google-plus-feed/feeds/css/styles.css?ver=2398cf47d310762017a7537a4efdd57b' type='text/css' media='all' />
+<link rel='stylesheet' id='cdv8-gdpr-cookieconsent-csslib-css'  href='//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css?ver=2398cf47d310762017a7537a4efdd57b' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-style-css'  href='https://fonts.googleapis.com/css?family=Cabin%3A400%7COpen+Sans%3A300italic%2C400%2C400italic%2C600%2C600italic%2C700%7CRoboto%3A300%2C400%2C400italic%2C500%2C500italic%2C700%2C900&#038;ver=8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='https://s24255.pcdn.co/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=4.11' type='text/css' media='all' />
+<link rel='stylesheet' id='td-theme-css'  href='https://s24255.pcdn.co/wp-content/themes/Newspaper/style.css?ver=8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='td-theme-demo-style-css'  href='https://s24255.pcdn.co/wp-content/themes/Newspaper/includes/demos/video/demo_style.css?ver=8.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var gpfAjax = {"ajaxurl":"https:\/\/www.unixmen.com\/wp-admin\/admin-ajax.php"};
+var gpfAjax = {"ajaxurl":"https:\/\/www.unixmen.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-content/plugins/custom-google-plus-feed/admin/js/admin.js?ver=2398cf47d310762017a7537a4efdd57b'></script>
+<link rel='https://api.w.org/' href='https://www.unixmen.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.unixmen.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s24255.pcdn.co/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://www.unixmen.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.unixmen.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.unixmen.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.unixmen.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.unixmen.com%2F&#038;format=xml" />
+<script type="text/javascript">
+var myAjaxFTS = 'https://www.unixmen.com/wp-admin/admin-ajax.php';
+</script>
+<script type="text/javascript">
+var myAjaxFTS = 'https://www.unixmen.com/wp-admin/admin-ajax.php';
+</script>
+	<style id="tdw-css-placeholder"></style>			<script>
+				window.tdwGlobal = {"adminUrl":"https:\/\/www.unixmen.com\/wp-admin\/","wpRestNonce":"2d10e77c86","wpRestUrl":"https:\/\/www.unixmen.com\/wp-json\/","permalinkStructure":"\/%postname%\/"};
+			</script>
+			<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://s24255.pcdn.co/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><!--[if IE  8]><link rel="stylesheet" type="text/css" href="https://s24255.pcdn.co/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]-->
+<!-- JS generated by theme -->
+
+<script>
+    
+    
+
+	    var tdBlocksArray = []; //here we store all the items for the current page
+
+	    //td_block class - each ajax block uses a object of this class for requests
+	    function tdBlock() {
+		    this.id = '';
+		    this.block_type = 1; //block type id (1-234 etc)
+		    this.atts = '';
+		    this.td_column_number = '';
+		    this.td_current_page = 1; //
+		    this.post_count = 0; //from wp
+		    this.found_posts = 0; //from wp
+		    this.max_num_pages = 0; //from wp
+		    this.td_filter_value = ''; //current live filter value
+		    this.is_ajax_running = false;
+		    this.td_user_action = ''; // load more or infinite loader (used by the animation)
+		    this.header_color = '';
+		    this.ajax_pagination_infinite_stop = ''; //show load more at page x
+	    }
+
+
+        // td_js_generator - mini detector
+        (function(){
+            var htmlTag = document.getElementsByTagName("html")[0];
+
+            if ( navigator.userAgent.indexOf("MSIE 10.0") > -1 ) {
+                htmlTag.className += ' ie10';
+            }
+
+            if ( !!navigator.userAgent.match(/Trident.*rv\:11\./) ) {
+                htmlTag.className += ' ie11';
+            }
+
+            if ( /(iPad|iPhone|iPod)/g.test(navigator.userAgent) ) {
+                htmlTag.className += ' td-md-is-ios';
+            }
+
+            var user_agent = navigator.userAgent.toLowerCase();
+            if ( user_agent.indexOf("android") > -1 ) {
+                htmlTag.className += ' td-md-is-android';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Mac OS X')  ) {
+                htmlTag.className += ' td-md-is-os-x';
+            }
+
+            if ( /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()) ) {
+               htmlTag.className += ' td-md-is-chrome';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Firefox') ) {
+                htmlTag.className += ' td-md-is-firefox';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Safari') && -1 === navigator.userAgent.indexOf('Chrome') ) {
+                htmlTag.className += ' td-md-is-safari';
+            }
+
+            if( -1 !== navigator.userAgent.indexOf('IEMobile') ){
+                htmlTag.className += ' td-md-is-iemobile';
+            }
+
+        })();
+
+
+
+
+        var tdLocalCache = {};
+
+        ( function () {
+            "use strict";
+
+            tdLocalCache = {
+                data: {},
+                remove: function (resource_id) {
+                    delete tdLocalCache.data[resource_id];
+                },
+                exist: function (resource_id) {
+                    return tdLocalCache.data.hasOwnProperty(resource_id) && tdLocalCache.data[resource_id] !== null;
+                },
+                get: function (resource_id) {
+                    return tdLocalCache.data[resource_id];
+                },
+                set: function (resource_id, cachedData) {
+                    tdLocalCache.remove(resource_id);
+                    tdLocalCache.data[resource_id] = cachedData;
+                }
+            };
+        })();
+
+    
+    
+var td_viewport_interval_list=[{"limitBottom":767,"sidebarWidth":228},{"limitBottom":1018,"sidebarWidth":300},{"limitBottom":1140,"sidebarWidth":324}];
+var td_animation_stack_effect="type0";
+var tds_animation_stack=true;
+var td_animation_stack_specific_selectors=".entry-thumb, img";
+var td_animation_stack_general_selectors=".td-animation-stack img, .td-animation-stack .entry-thumb, .post img";
+var td_ajax_url="https:\/\/www.unixmen.com\/wp-admin\/admin-ajax.php?td_theme_name=Newspaper&v=8.1";
+var td_get_template_directory_uri="https:\/\/www.unixmen.com\/wp-content\/themes\/Newspaper";
+var tds_snap_menu="";
+var tds_logo_on_sticky="";
+var tds_header_style="3";
+var td_please_wait="Please wait...";
+var td_email_user_pass_incorrect="User or password incorrect!";
+var td_email_user_incorrect="Email or username incorrect!";
+var td_email_incorrect="Email incorrect!";
+var tds_more_articles_on_post_enable="";
+var tds_more_articles_on_post_time_to_wait="";
+var tds_more_articles_on_post_pages_distance_from_top=0;
+var tds_theme_color_site_wide="#328ec3";
+var tds_smart_sidebar="";
+var tdThemeName="Newspaper";
+var td_magnific_popup_translation_tPrev="Previous (Left arrow key)";
+var td_magnific_popup_translation_tNext="Next (Right arrow key)";
+var td_magnific_popup_translation_tCounter="%curr% of %total%";
+var td_magnific_popup_translation_ajax_tError="The content from %url% could not be loaded.";
+var td_magnific_popup_translation_image_tError="The image #%curr% could not be loaded.";
+var td_ad_background_click_link="";
+var td_ad_background_click_target="";
+</script>
+
+
+<!-- Header style compiled by theme -->
+
+<style>
+    
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > li > a:hover,
+    .td-header-wrap .black-menu .sf-menu > .sfHover > a,
+    .td-header-style-12 .td-header-menu-wrap-full,
+    .sf-menu > .current-menu-item > a:after,
+    .sf-menu > .current-menu-ancestor > a:after,
+    .sf-menu > .current-category-ancestor > a:after,
+    .sf-menu > li:hover > a:after,
+    .sf-menu > .sfHover > a:after,
+    .td-header-style-12 .td-affix,
+    .header-search-wrap .td-drop-down-search:after,
+    .header-search-wrap .td-drop-down-search .btn:hover,
+    input[type=submit]:hover,
+    .td-read-more a,
+    .td-post-category:hover,
+    .td-grid-style-1.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td-grid-style-5.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td_top_authors .td-active .td-author-post-count,
+    .td_top_authors .td-active .td-author-comments-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-post-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-comments-count,
+    .td-404-sub-sub-title a:hover,
+    .td-search-form-widget .wpb_button:hover,
+    .td-rating-bar-wrap div,
+    .td_category_template_3 .td-current-sub-category,
+    .dropcap,
+    .td_wrapper_video_playlist .td_video_controls_playlist_wrapper,
+    .wpb_default,
+    .wpb_default:hover,
+    .td-left-smart-list:hover,
+    .td-right-smart-list:hover,
+    .woocommerce-checkout .woocommerce input.button:hover,
+    .woocommerce-page .woocommerce a.button:hover,
+    .woocommerce-account div.woocommerce .button:hover,
+    #bbpress-forums button:hover,
+    .bbp_widget_login .button:hover,
+    .td-footer-wrapper .td-post-category,
+    .td-footer-wrapper .widget_product_search input[type="submit"]:hover,
+    .woocommerce .product a.button:hover,
+    .woocommerce .product #respond input#submit:hover,
+    .woocommerce .checkout input#place_order:hover,
+    .woocommerce .woocommerce.widget .button:hover,
+    .single-product .product .summary .cart .button:hover,
+    .woocommerce-cart .woocommerce table.cart .button:hover,
+    .woocommerce-cart .woocommerce .shipping-calculator-form .button:hover,
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+    #bbpress-forums .bbp-pagination .current,
+    #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
+    .td-theme-slider:hover .slide-meta-cat a,
+    a.vc_btn-black:hover,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .td-scroll-up,
+    .td-smart-list-button:hover,
+    .td-weather-information:before,
+    .td-weather-week:before,
+    .td_block_exchange .td-exchange-header:before,
+    .td_block_big_grid_9.td-grid-style-1 .td-post-category,
+    .td_block_big_grid_9.td-grid-style-5 .td-post-category,
+    .td-grid-style-6.td-hover-1 .td-module-thumb:after,
+    .td-pulldown-syle-2 .td-subcat-dropdown ul:after,
+    .td_block_template_9 .td-block-title:after,
+    .td_block_template_15 .td-block-title:before {
+        background-color: #328ec3;
+    }
+
+    .global-block-template-4 .td-related-title .td-cur-simple-item:before {
+        border-color: #328ec3 transparent transparent transparent !important;
+    }
+
+    .woocommerce .woocommerce-message .button:hover,
+    .woocommerce .woocommerce-error .button:hover,
+    .woocommerce .woocommerce-info .button:hover,
+    .global-block-template-4 .td-related-title .td-cur-simple-item,
+    .global-block-template-3 .td-related-title .td-cur-simple-item,
+    .global-block-template-9 .td-related-title:after {
+        background-color: #328ec3 !important;
+    }
+
+    .woocommerce .product .onsale,
+    .woocommerce.widget .ui-slider .ui-slider-handle {
+        background: none #328ec3;
+    }
+
+    .woocommerce.widget.widget_layered_nav_filters ul li a {
+        background: none repeat scroll 0 0 #328ec3 !important;
+    }
+
+    a,
+    cite a:hover,
+    .td_mega_menu_sub_cats .cur-sub-cat,
+    .td-mega-span h3 a:hover,
+    .td_mod_mega_menu:hover .entry-title a,
+    .header-search-wrap .result-msg a:hover,
+    .top-header-menu li a:hover,
+    .top-header-menu .current-menu-item > a,
+    .top-header-menu .current-menu-ancestor > a,
+    .top-header-menu .current-category-ancestor > a,
+    .td-social-icon-wrap > a:hover,
+    .td-header-sp-top-widget .td-social-icon-wrap a:hover,
+    .td-page-content blockquote p,
+    .td-post-content blockquote p,
+    .mce-content-body blockquote p,
+    .comment-content blockquote p,
+    .wpb_text_column blockquote p,
+    .td_block_text_with_title blockquote p,
+    .td_module_wrap:hover .entry-title a,
+    .td-subcat-filter .td-subcat-list a:hover,
+    .td-subcat-filter .td-subcat-dropdown a:hover,
+    .td_quote_on_blocks,
+    .dropcap2,
+    .dropcap3,
+    .td_top_authors .td-active .td-authors-name a,
+    .td_top_authors .td_mod_wrap:hover .td-authors-name a,
+    .td-post-next-prev-content a:hover,
+    .author-box-wrap .td-author-social a:hover,
+    .td-author-name a:hover,
+    .td-author-url a:hover,
+    .td_mod_related_posts:hover h3 > a,
+    .td-post-template-11 .td-related-title .td-related-left:hover,
+    .td-post-template-11 .td-related-title .td-related-right:hover,
+    .td-post-template-11 .td-related-title .td-cur-simple-item,
+    .td-post-template-11 .td_block_related_posts .td-next-prev-wrap a:hover,
+    .comment-reply-link:hover,
+    .logged-in-as a:hover,
+    #cancel-comment-reply-link:hover,
+    .td-search-query,
+    .td-category-header .td-pulldown-category-filter-link:hover,
+    .td-category-siblings .td-subcat-dropdown a:hover,
+    .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
+    .widget a:hover,
+    .td_wp_recentcomments a:hover,
+    .archive .widget_archive .current,
+    .archive .widget_archive .current a,
+    .widget_calendar tfoot a:hover,
+    .woocommerce a.added_to_cart:hover,
+    .woocommerce-account .woocommerce-MyAccount-navigation a:hover,
+    #bbpress-forums li.bbp-header .bbp-reply-content span a:hover,
+    #bbpress-forums .bbp-forum-freshness a:hover,
+    #bbpress-forums .bbp-topic-freshness a:hover,
+    #bbpress-forums .bbp-forums-list li a:hover,
+    #bbpress-forums .bbp-forum-title:hover,
+    #bbpress-forums .bbp-topic-permalink:hover,
+    #bbpress-forums .bbp-topic-started-by a:hover,
+    #bbpress-forums .bbp-topic-started-in a:hover,
+    #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink,
+    .widget_display_replies .bbp-author-name,
+    .widget_display_topics .bbp-author-name,
+    .footer-text-wrap .footer-email-wrap a,
+    .td-subfooter-menu li a:hover,
+    .footer-social-wrap a:hover,
+    a.vc_btn-black:hover,
+    .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
+    .td_module_17 .td-read-more a:hover,
+    .td_module_18 .td-read-more a:hover,
+    .td_module_19 .td-post-author-name a:hover,
+    .td-instagram-user a,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover i,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item,
+    .global-block-template-2 .td-related-title .td-cur-simple-item,
+    .global-block-template-5 .td-related-title .td-cur-simple-item,
+    .global-block-template-6 .td-related-title .td-cur-simple-item,
+    .global-block-template-7 .td-related-title .td-cur-simple-item,
+    .global-block-template-8 .td-related-title .td-cur-simple-item,
+    .global-block-template-9 .td-related-title .td-cur-simple-item,
+    .global-block-template-10 .td-related-title .td-cur-simple-item,
+    .global-block-template-11 .td-related-title .td-cur-simple-item,
+    .global-block-template-12 .td-related-title .td-cur-simple-item,
+    .global-block-template-13 .td-related-title .td-cur-simple-item,
+    .global-block-template-14 .td-related-title .td-cur-simple-item,
+    .global-block-template-15 .td-related-title .td-cur-simple-item,
+    .global-block-template-16 .td-related-title .td-cur-simple-item,
+    .global-block-template-17 .td-related-title .td-cur-simple-item,
+    .td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+    .td-theme-wrap .sf-menu ul .sfHover > a,
+    .td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-menu-item > a,
+    .td_outlined_btn {
+        color: #328ec3;
+    }
+
+    a.vc_btn-black.vc_btn_square_outlined:hover,
+    a.vc_btn-black.vc_btn_outlined:hover,
+    .td-mega-menu-page .wpb_content_element ul li a:hover,
+    .td-theme-wrap .td-aj-search-results .td_module_wrap:hover .entry-title a,
+    .td-theme-wrap .header-search-wrap .result-msg a:hover {
+        color: #328ec3 !important;
+    }
+
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+    #bbpress-forums .bbp-pagination .current,
+    .post .td_quote_box,
+    .page .td_quote_box,
+    a.vc_btn-black:hover,
+    .td_block_template_5 .td-block-title > *,
+    .td_outlined_btn {
+        border-color: #328ec3;
+    }
+
+    .td_wrapper_video_playlist .td_video_currently_playing:after {
+        border-color: #328ec3 !important;
+    }
+
+    .header-search-wrap .td-drop-down-search:before {
+        border-color: transparent transparent #328ec3 transparent;
+    }
+
+    .block-title > span,
+    .block-title > a,
+    .block-title > label,
+    .widgettitle,
+    .widgettitle:after,
+    .td-trending-now-title,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .wpb_tabs li.ui-tabs-active a,
+    .wpb_tabs li:hover a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab.vc_active > a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab:hover > a,
+    .td_block_template_1 .td-related-title .td-cur-simple-item,
+    .woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+    .td-subcat-filter .td-subcat-dropdown:hover .td-subcat-more, 
+    .td_3D_btn,
+    .td_shadow_btn,
+    .td_default_btn,
+    .td_round_btn, 
+    .td_outlined_btn:hover {
+    	background-color: #328ec3;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    	background-color: #328ec3 !important;
+    }
+
+    .block-title,
+    .td_block_template_1 .td-related-title,
+    .wpb_tabs .wpb_tabs_nav,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container,
+    .woocommerce div.product .woocommerce-tabs ul.tabs:before {
+        border-color: #328ec3;
+    }
+    .td_block_wrap .td-subcat-item a.td-cur-simple-item {
+	    color: #328ec3;
+	}
+
+
+    
+    .td-grid-style-4 .entry-title
+    {
+        background-color: rgba(50, 142, 195, 0.7);
+    }
+
+    
+    .td-header-wrap .td-header-top-menu-full,
+    .td-header-wrap .top-header-menu .sub-menu {
+        background-color: #328ec3;
+    }
+    .td-header-style-8 .td-header-top-menu-full {
+        background-color: transparent;
+    }
+    .td-header-style-8 .td-header-top-menu-full .td-header-top-menu {
+        background-color: #328ec3;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+    .td-header-wrap .td-header-top-menu-full {
+        border-bottom: none;
+    }
+
+
+    
+    .td-header-top-menu,
+    .td-header-top-menu a,
+    .td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+    .td-header-wrap .td-header-top-menu-full a,
+    .td-header-style-8 .td-header-top-menu,
+    .td-header-style-8 .td-header-top-menu a {
+        color: #ffffff;
+    }
+
+    
+    .top-header-menu .current-menu-item > a,
+    .top-header-menu .current-menu-ancestor > a,
+    .top-header-menu .current-category-ancestor > a,
+    .top-header-menu li a:hover {
+        color: #f2f2f2;
+    }
+
+    
+    .td-header-wrap .td-header-sp-top-widget .td-icon-font {
+        color: #ffffff;
+    }
+
+    
+    .td-header-wrap .td-header-sp-top-widget i.td-icon-font:hover {
+        color: #f2f2f2;
+    }
+
+
+    
+    .td-theme-wrap .sf-menu .td-normal-menu .td-menu-item > a:hover,
+    .td-theme-wrap .sf-menu .td-normal-menu .sfHover > a,
+    .td-theme-wrap .sf-menu .td-normal-menu .current-menu-ancestor > a,
+    .td-theme-wrap .sf-menu .td-normal-menu .current-category-ancestor > a,
+    .td-theme-wrap .sf-menu .td-normal-menu .current-menu-item > a {
+        color: #328ec3;
+    }
+
+    
+    .top-header-menu > li > a,
+    .td-weather-top-widget .td-weather-now .td-big-degrees,
+    .td-weather-top-widget .td-weather-header .td-weather-city,
+    .td-header-sp-top-menu .td_data_time {
+        font-size:12px;
+	
+    }
+    
+    ul.sf-menu > .td-menu-item > a {
+        font-size:12px;
+	
+    }
+    
+	.post .td-post-header .entry-title {
+		font-family:Cabin;
+	
+	}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6194676-1', 'auto');
+  ga('send', 'pageview');
+</script>		<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+ul, ol {
+overflow:hidden;
+}
+
+#div-gpt-ad-1510255855724-1 {
+margin-top: 1em !important;
+margin-bottom: 2em !important;
+	display: block! important; width: 100% !important; height: auto !important;
+}
+
+	img.i-amphtml-fill-content.i-amphtml-replaced-content {display: block !important; width: auto !important; height: auto !important;}
+
+			</style>
+	<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    var width = window.outerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (width < 356) {
+            googletag.defineSlot('/21552082/UNX_Top_Content', [300, 250], 'div-gpt-ad-1510255855724-0').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Mid_Content', [300, 250], 'div-gpt-ad-1510255855724-1').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Header', [320, 100], 'div-gpt-ad-1510255855724-2').addService(googletag.pubads());
+    } else if (width < 748) {
+            googletag.defineSlot('/21552082/UNX_Top_Content', [336, 280], 'div-gpt-ad-1510255855724-0').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Mid_Content', [336, 280], 'div-gpt-ad-1510255855724-1').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Header', [320, 100], 'div-gpt-ad-1510255855724-2').addService(googletag.pubads());
+    } else if (width < 768) {
+            googletag.defineSlot('/21552082/UNX_Top_Content', [336, 280], 'div-gpt-ad-1510255855724-0').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Mid_Content', [728, 250], 'div-gpt-ad-1510255855724-1').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Header', [728, 90], 'div-gpt-ad-1510255855724-2').addService(googletag.pubads());
+    } else if (width < 1018) {
+            googletag.defineSlot('/21552082/UNX_Top_Content', [336, 280], 'div-gpt-ad-1510255855724-0').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Mid_Content', [486, 250], 'div-gpt-ad-1510255855724-1').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Header', [[320, 100], [728, 90], [320, 50]], 'div-gpt-ad-1510255855724-2').addService(googletag.pubads());
+        googletag.defineSlot('/21552082/UNX_Sidebar_300x600', [300, 600], 'div-gpt-ad-1510255855724-3').addService(googletag.pubads());
+    } else if (width < 1140) {
+            googletag.defineSlot('/21552082/UNX_Top_Content', [336, 280], 'div-gpt-ad-1510255855724-0').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Mid_Content', [640, 250], 'div-gpt-ad-1510255855724-1').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Header', [728, 90], 'div-gpt-ad-1510255855724-2').addService(googletag.pubads());
+        googletag.defineSlot('/21552082/UNX_Sidebar_300x600', [300, 600], 'div-gpt-ad-1510255855724-3').addService(googletag.pubads());
+    } else {
+            googletag.defineSlot('/21552082/UNX_Top_Content', [336, 280], 'div-gpt-ad-1510255855724-0').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Mid_Content', [696, 250], 'div-gpt-ad-1510255855724-1').addService(googletag.pubads());
+            googletag.defineSlot('/21552082/UNX_Header', [728, 90], 'div-gpt-ad-1510255855724-2').addService(googletag.pubads());
+        googletag.defineSlot('/21552082/UNX_Sidebar_300x600', [300, 600], 'div-gpt-ad-1510255855724-3').addService(googletag.pubads());
+    }
+        googletag.enableServices();
+  });
+</script>
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/unixmen/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script>
+
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Facebook SDK end -->
+</head>
+
+<body class="home page-template-default page page-id-40660 global-block-template-1 wpb-js-composer js-comp-ver-4.11 vc_responsive td-animation-stack-type0 td-full-layout" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+        <div class="td-scroll-up"><i class="td-icon-menu-up"></i></div>
+    
+    <div class="td-menu-background"></div>
+<div id="td-mobile-nav">
+    <div class="td-mobile-container">
+        <!-- mobile menu top section -->
+        <div class="td-menu-socials-wrap">
+            <!-- socials -->
+            <div class="td-menu-socials">
+                
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.facebook.com/unixmencom" title="Facebook">
+                <i class="td-icon-font td-icon-facebook"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://plus.google.com/+Unixmen" title="Google+">
+                <i class="td-icon-font td-icon-googleplus"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.linkedin.com/groups/3899550/profile" title="Linkedin">
+                <i class="td-icon-font td-icon-linkedin"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.pinterest.com/unixmen/" title="Pinterest">
+                <i class="td-icon-font td-icon-pinterest"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.reddit.com/domain/unixmen.com" title="Reddit">
+                <i class="td-icon-font td-icon-reddit"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="http://www.unixmen.com/feed/" title="RSS">
+                <i class="td-icon-font td-icon-rss"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://twitter.com/unixmen" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.youtube.com/user/UnixmenVideos" title="Youtube">
+                <i class="td-icon-font td-icon-youtube"></i>
+            </a>
+        </span>            </div>
+            <!-- close button -->
+            <div class="td-mobile-close">
+                <a href="#"><i class="td-icon-close-mobile"></i></a>
+            </div>
+        </div>
+
+        <!-- login section -->
+        
+        <!-- menu section -->
+        <div class="td-mobile-content">
+            <div class="menu-main-menu-container"><ul id="menu-main-menu" class="td-mobile-main-menu"><li id="menu-item-47234" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40660 current_page_item menu-item-first menu-item-47234"><a href="https://www.unixmen.com/">Home</a></li>
+<li id="menu-item-47224" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47224"><a href="https://www.unixmen.com/category/linux-distributions/">Linux distributions</a></li>
+<li id="menu-item-47226" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47226"><a href="https://www.unixmen.com/category/linux-tutorials/">Linux tutorials</a></li>
+<li id="menu-item-47227" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47227"><a href="https://www.unixmen.com/category/news/">News</a></li>
+<li id="menu-item-47230" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47230"><a href="https://www.unixmen.com/category/frequently-asked-questions/">Frequently Asked Questions</a></li>
+<li id="menu-item-47231" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47231"><a href="https://www.unixmen.com/category/opensource/">Opensource</a></li>
+<li id="menu-item-47232" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47232"><a href="https://www.unixmen.com/category/unix/">Unix</a></li>
+<li id="menu-item-47625" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47625"><a href="http://ask.unixmen.com">Ask/unixmen</a></li>
+</ul></div>        </div>
+    </div>
+
+    <!-- register/login section -->
+    </div>    <div class="td-search-background"></div>
+<div class="td-search-wrap-mob">
+	<div class="td-drop-down-search" aria-labelledby="td-header-search-button">
+		<form method="get" class="td-search-form" action="https://www.unixmen.com/">
+			<!-- close button -->
+			<div class="td-search-close">
+				<a href="#"><i class="td-icon-close-mobile"></i></a>
+			</div>
+			<div role="search" class="td-search-input">
+				<span>Search</span>
+				<input id="td-header-search-mob" type="text" value="" name="s" autocomplete="off" />
+			</div>
+		</form>
+		<div id="td-aj-search-mob"></div>
+	</div>
+</div>    
+    
+    <div id="td-outer-wrap" class="td-theme-wrap">
+    
+        <!--
+Header style 3
+-->
+
+<div class="td-header-wrap td-header-style-3">
+
+    <div class="td-header-top-menu-full td-container-wrap ">
+        <div class="td-container td-header-row td-header-top-menu">
+            
+    <div class="top-bar-style-1">
+        
+<div class="td-header-sp-top-menu">
+
+
+	<div class="menu-top-container"><ul id="menu-top-menu" class="top-header-menu"><li id="menu-item-47221" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-first td-menu-item td-normal-menu menu-item-47221"><a href="https://www.unixmen.com/about-us/">About Us</a></li>
+<li id="menu-item-47223" class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-47223"><a href="https://www.unixmen.com/advertising/">Advertising on Unixmen</a></li>
+<li id="menu-item-47219" class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-47219"><a href="https://www.unixmen.com/work-for-us/">Become a Contributor</a></li>
+<li id="menu-item-48133" class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-48133"><a href="https://www.unixmen.com/unixmen-collaborated-with-unixstickers/">Unixmen collaborated with Unixstickers</a></li>
+<li id="menu-item-47222" class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-47222"><a href="https://www.unixmen.com/contact-us/">Contact Us</a></li>
+</ul></div></div>
+            </div>
+
+<!-- LOGIN MODAL -->
+        </div>
+    </div>
+
+    <div class="td-banner-wrap-full td-container-wrap ">
+        <div class="td-container td-header-row td-header-header">
+            <div class="td-header-sp-logo">
+                <h1 class="td-logo">        <a class="td-main-logo" href="https://www.unixmen.com/">
+            <img class="td-retina-data" data-retina="https://s24255.pcdn.co/wp-content/uploads/2016/02/unixmen-logo-retina-300x177.png" src="https://s24255.pcdn.co/wp-content/uploads/2016/02/unixmen-logo.png" alt="Unixmen" title="Unixmen"/>
+            <span class="td-visual-hidden">Unixmen</span>
+        </a>
+    </h1>            </div>
+            <div class="td-header-sp-recs">
+                <div class="td-header-rec-wrap">
+    <div class="td-a-rec td-a-rec-id-header  td_uid_1_5c6a916d4c2e3_rand td_block_template_1"><!-- /21552082/UNX_Header -->
+<div id='div-gpt-ad-1510255855724-2'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1510255855724-2'); });
+</script>
+</div></div>
+</div>            </div>
+        </div>
+    </div>
+
+    <div class="td-header-menu-wrap-full td-container-wrap ">
+        <div class="td-header-menu-wrap">
+            <div class="td-container td-header-row td-header-main-menu black-menu">
+                <div id="td-header-menu" role="navigation">
+    <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>
+    <div class="td-main-menu-logo td-logo-in-header">
+                <a class="td-main-logo" href="https://www.unixmen.com/">
+            <img class="td-retina-data" data-retina="https://s24255.pcdn.co/wp-content/uploads/2016/02/unixmen-logo-retina-300x177.png" src="https://s24255.pcdn.co/wp-content/uploads/2016/02/unixmen-logo.png" alt="Unixmen" title="Unixmen"/>
+        </a>
+        </div>
+    <div class="menu-main-menu-container"><ul id="menu-main-menu-1" class="sf-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40660 current_page_item menu-item-first td-menu-item td-normal-menu menu-item-47234"><a href="https://www.unixmen.com/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-47224"><a href="https://www.unixmen.com/category/linux-distributions/">Linux distributions</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-47226"><a href="https://www.unixmen.com/category/linux-tutorials/">Linux tutorials</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-47227"><a href="https://www.unixmen.com/category/news/">News</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-47230"><a href="https://www.unixmen.com/category/frequently-asked-questions/">Frequently Asked Questions</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-47231"><a href="https://www.unixmen.com/category/opensource/">Opensource</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-47232"><a href="https://www.unixmen.com/category/unix/">Unix</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-47625"><a href="http://ask.unixmen.com">Ask/unixmen</a></li>
+</ul></div></div>
+
+
+<div class="td-search-wrapper">
+    <div id="td-top-search">
+        <!-- Search -->
+        <div class="header-search-wrap">
+            <div class="dropdown header-search">
+                <a id="td-header-search-button" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+                <a id="td-header-search-button-mob" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-search-wrap">
+	<div class="dropdown header-search">
+		<div class="td-drop-down-search" aria-labelledby="td-header-search-button">
+			<form method="get" class="td-search-form" action="https://www.unixmen.com/">
+				<div role="search" class="td-head-form-search-wrap">
+					<input id="td-header-search" type="text" value="" name="s" autocomplete="off" /><input class="wpb_button wpb_btn-inverse btn" type="submit" id="td-header-search-top" value="Search" />
+				</div>
+			</form>
+			<div id="td-aj-search"></div>
+		</div>
+	</div>
+</div>            </div>
+        </div>
+    </div>
+
+</div>        
+            <div class="td-main-content-wrap td-main-page-wrap td-container-wrap">
+                <div class="tdc-content-wrap">
+                    <div id="td_uid_1_5c6a916d4d2db" class="tdc-row"><div class="vc_row td_uid_2_5c6a916d4d328_rand  wpb_row td-pb-row" ><div class="vc_column td_uid_3_5c6a916d4d3fa_rand  wpb_column vc_column_container td-pb-span12"><div class="wpb_wrapper"><div class="td_block_wrap td_block_big_grid_5 td_uid_4_5c6a916d4d4dd_rand td-grid-style-4 td-hover-1 td-big-grids td-pb-border-top td_block_template_1"  data-td-block-uid="td_uid_4_5c6a916d4d4dd" ><div id=td_uid_4_5c6a916d4d4dd class="td_block_inner"><div class="td-big-grid-wrapper">
+        <div class="td_module_mx12 td-animation-stack td-big-grid-post-0 td-big-grid-post td-small-thumb">
+            <div class="td-module-thumb"><a href="https://www.unixmen.com/5-less-known-linux-admin-tools/" rel="bookmark" title="5 Less known Linux Admin Tools"><img width="356" height="220" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2015/07/100858-100771-linux_2560x1600-356x220.jpg" alt="" title="5 Less known Linux Admin Tools"/></a></div>            <div class="td-meta-info-container">
+                <div class="td-meta-align">
+                    <div class="td-big-grid-meta">
+                                                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/5-less-known-linux-admin-tools/" rel="bookmark" title="5 Less known Linux Admin Tools">5 Less known Linux Admin Tools</a></h3>                    </div>
+                    <div class="td-module-meta-info">
+                        <span class="td-post-author-name"><a href="https://www.unixmen.com/author/rajneesh/">Rajneesh Upadhyay</a> <span>-</span> </span>                        <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2015-07-29T12:52:56+00:00" >July 29, 2015</time></span>                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="td_module_mx12 td-animation-stack td-big-grid-post-1 td-big-grid-post td-small-thumb">
+            <div class="td-module-thumb"><a href="https://www.unixmen.com/essay-haoop-part/" rel="bookmark" title="Essay on Haoop Part -I"><img width="356" height="220" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/01/big-data-hadoop-elephant-356x220.png" alt="big-data-hadoop-elephant" title="Essay on Haoop Part -I"/></a></div>            <div class="td-meta-info-container">
+                <div class="td-meta-align">
+                    <div class="td-big-grid-meta">
+                                                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/essay-haoop-part/" rel="bookmark" title="Essay on Haoop Part -I">Essay on Haoop Part -I</a></h3>                    </div>
+                    <div class="td-module-meta-info">
+                        <span class="td-post-author-name"><a href="https://www.unixmen.com/author/rajneesh/">Rajneesh Upadhyay</a> <span>-</span> </span>                        <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-01-19T11:22:56+00:00" >January 19, 2016</time></span>                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="td_module_mx12 td-animation-stack td-big-grid-post-2 td-big-grid-post td-small-thumb">
+            <div class="td-module-thumb"><a href="https://www.unixmen.com/enable-disable-repositories-centos/" rel="bookmark" title="How to enable or disable repositories in CentOS"><img width="356" height="220" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2015/11/CentOS_Linux_Unixmen-356x220.png" alt="" title="How to enable or disable repositories in CentOS"/></a></div>            <div class="td-meta-info-container">
+                <div class="td-meta-align">
+                    <div class="td-big-grid-meta">
+                                                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/enable-disable-repositories-centos/" rel="bookmark" title="How to enable or disable repositories in CentOS">How to enable or disable repositories in CentOS</a></h3>                    </div>
+                    <div class="td-module-meta-info">
+                        <span class="td-post-author-name"><a href="https://www.unixmen.com/author/sk/">SK</a> <span>-</span> </span>                        <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-06-02T11:38:41+00:00" >June 2, 2016</time></span>                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div><div class="clearfix"></div></div></div> <!-- ./block --><div class="td_block_wrap td_block_trending_now td_uid_5_5c6a916d522a4_rand td-pb-border-top td_block_template_1"  data-td-block-uid="td_uid_5_5c6a916d522a4" ><script>var block_td_uid_5_5c6a916d522a4 = new tdBlock();
+block_td_uid_5_5c6a916d522a4.id = "td_uid_5_5c6a916d522a4";
+block_td_uid_5_5c6a916d522a4.atts = '{"limit":5,"sort":"random_posts","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"","category_ids":"","custom_title":"","custom_url":"","show_child_cat":"","sub_cat_ajax":"","ajax_pagination":"","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":3,"td_ajax_preloading":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_5_5c6a916d522a4_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_5_5c6a916d522a4_rand","tdc_css_class_style":"td_uid_5_5c6a916d522a4_rand_style","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+block_td_uid_5_5c6a916d522a4.td_column_number = "3";
+block_td_uid_5_5c6a916d522a4.block_type = "td_block_trending_now";
+block_td_uid_5_5c6a916d522a4.post_count = "5";
+block_td_uid_5_5c6a916d522a4.found_posts = "3119";
+block_td_uid_5_5c6a916d522a4.header_color = "";
+block_td_uid_5_5c6a916d522a4.ajax_pagination_infinite_stop = "";
+block_td_uid_5_5c6a916d522a4.max_num_pages = "624";
+tdBlocksArray.push(block_td_uid_5_5c6a916d522a4);
+</script><div id=td_uid_5_5c6a916d522a4 class="td_block_inner">
+
+	<div class="td-block-row"><div class="td-trending-now-wrapper" id="td_uid_5_5c6a916d522a4" data-start=""><div class="td-trending-now-title">Trending Now</div><div class="td-trending-now-display-area">
+        <div class="td_module_trending_now td-trending-now-post-0 td-trending-now-post">
+
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/install-android-sdk-ubuntu-14-04/" rel="bookmark" title="Install Android SDK On Ubuntu 14.04">Install Android SDK On Ubuntu 14.04</a></h3>
+        </div>
+
+        
+        <div class="td_module_trending_now td-trending-now-post-1 td-trending-now-post">
+
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/install-scientific-calculator-app-google-chrome/" rel="bookmark" title="Install Scientific Calculator App in Google Chrome">Install Scientific Calculator App in Google Chrome</a></h3>
+        </div>
+
+        
+        <div class="td_module_trending_now td-trending-now-post-2 td-trending-now-post">
+
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/install-pidgin-2-10-9-linux-mint-ubuntu-elemetary-os-via-ppa/" rel="bookmark" title="Install Pidgin 2.10.9 In Linux Mint, Ubuntu and Elemetary OS via PPA">Install Pidgin 2.10.9 In Linux Mint, Ubuntu and Elemetary OS via PPA</a></h3>
+        </div>
+
+        
+        <div class="td_module_trending_now td-trending-now-post-3 td-trending-now-post">
+
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/meet-jolla-a-linux-smartphone/" rel="bookmark" title="Meet Jolla, A Linux Smartphone">Meet Jolla, A Linux Smartphone</a></h3>
+        </div>
+
+        
+        <div class="td_module_trending_now td-trending-now-post-4 td-trending-now-post">
+
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/remove-duplicate-files-fdupes/" rel="bookmark" title="Remove duplicate files with fdupes">Remove duplicate files with fdupes</a></h3>
+        </div>
+
+        </div><div class="td-next-prev-wrap"><a href="#"
+                                  class="td_ajax-prev-pagex td-trending-now-nav-left"
+                                  data-block-id="td_uid_5_5c6a916d522a4"
+                                  data-moving="left"
+                                  data-control-start=""><i class="td-icon-menu-left"></i></a><a href="#"
+                                  class="td_ajax-next-pagex td-trending-now-nav-right"
+                                  data-block-id="td_uid_5_5c6a916d522a4"
+                                  data-moving="right"
+                                  data-control-start=""><i class="td-icon-menu-right"></i></a></div></div></div><!--./row-fluid--></div></div> <!-- ./block --></div></div></div></div><div id="td_uid_3_5c6a916d559f7" class="tdc-row"><div class="vc_row td_uid_7_5c6a916d55a3a_rand td-ss-row wpb_row td-pb-row" ><div class="vc_column td_uid_8_5c6a916d55b39_rand  wpb_column vc_column_container td-pb-span8"><div class="wpb_wrapper"><div class="td_block_wrap td_block_4 td_uid_9_5c6a916d55c4d_rand td_with_ajax_pagination td-pb-border-top td_block_template_1 td-column-2 td_block_padding"  data-td-block-uid="td_uid_9_5c6a916d55c4d" >
+<style>
+body .td_uid_9_5c6a916d55c4d_rand .td_module_wrap:hover .entry-title a,
+            body .td_uid_9_5c6a916d55c4d_rand .td-pulldown-filter-link:hover,
+            body .td_uid_9_5c6a916d55c4d_rand .td-subcat-item a:hover,
+            body .td_uid_9_5c6a916d55c4d_rand .td-subcat-item .td-cur-simple-item,
+            body .td_uid_9_5c6a916d55c4d_rand .td_quote_on_blocks,
+            body .td_uid_9_5c6a916d55c4d_rand .td-opacity-cat .td-post-category:hover,
+            body .td_uid_9_5c6a916d55c4d_rand .td-opacity-read .td-read-more a:hover,
+            body .td_uid_9_5c6a916d55c4d_rand .td-opacity-author .td-post-author-name a:hover,
+            body .td_uid_9_5c6a916d55c4d_rand .td-instagram-user a {
+                color: #1e73be;
+            }
+
+            body .td_uid_9_5c6a916d55c4d_rand .td-next-prev-wrap a:hover,
+            body .td_uid_9_5c6a916d55c4d_rand .td-load-more-wrap a:hover {
+                background-color: #1e73be;
+                border-color: #1e73be;
+            }
+
+            body .td_uid_9_5c6a916d55c4d_rand .block-title > *,
+            body .td_uid_9_5c6a916d55c4d_rand .td-trending-now-title,
+            body .td_uid_9_5c6a916d55c4d_rand .td-read-more a,
+            body .td_uid_9_5c6a916d55c4d_rand .td-weather-information:before,
+            body .td_uid_9_5c6a916d55c4d_rand .td-weather-week:before,
+            body .td_uid_9_5c6a916d55c4d_rand .td-subcat-dropdown:hover .td-subcat-more,
+            body .td_uid_9_5c6a916d55c4d_rand .td-exchange-header:before,
+            body .td-footer-wrapper .td_uid_9_5c6a916d55c4d_rand .td-post-category,
+            body .td_uid_9_5c6a916d55c4d_rand .td-post-category:hover {
+                background-color: #1e73be;
+            }
+            body .td-footer-wrapper .td_uid_9_5c6a916d55c4d_rand .block-title > * {
+                padding: 6px 7px 5px;
+                line-height: 1;
+            }
+
+            body .td_uid_9_5c6a916d55c4d_rand .block-title {
+                border-color: #1e73be;
+            }
+
+            
+            body .td_uid_9_5c6a916d55c4d_rand .block-title > *,
+            body .td_uid_9_5c6a916d55c4d_rand .td-trending-now-title {
+                color: #ffffff;
+            }
+</style><script>var block_td_uid_9_5c6a916d55c4d = new tdBlock();
+block_td_uid_9_5c6a916d55c4d.id = "td_uid_9_5c6a916d55c4d";
+block_td_uid_9_5c6a916d55c4d.atts = '{"limit":"10","sort":"","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"","category_ids":"","custom_title":"Latest Articles","custom_url":"","show_child_cat":"","sub_cat_ajax":"","ajax_pagination":"next_prev","header_color":"#1e73be","header_text_color":"#ffffff","ajax_pagination_infinite_stop":"","td_column_number":2,"td_ajax_preloading":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_9_5c6a916d55c4d_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_9_5c6a916d55c4d_rand","tdc_css_class_style":"td_uid_9_5c6a916d55c4d_rand_style","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+block_td_uid_9_5c6a916d55c4d.td_column_number = "2";
+block_td_uid_9_5c6a916d55c4d.block_type = "td_block_4";
+block_td_uid_9_5c6a916d55c4d.post_count = "10";
+block_td_uid_9_5c6a916d55c4d.found_posts = "3119";
+block_td_uid_9_5c6a916d55c4d.header_color = "#1e73be";
+block_td_uid_9_5c6a916d55c4d.ajax_pagination_infinite_stop = "";
+block_td_uid_9_5c6a916d55c4d.max_num_pages = "312";
+tdBlocksArray.push(block_td_uid_9_5c6a916d55c4d);
+</script><div class="td-block-title-wrap"><h4 class="block-title"><span class="td-pulldown-size">Latest Articles</span></h4></div><div id=td_uid_9_5c6a916d55c4d class="td_block_inner">
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/container-docker-compose-ubuntu-16-04/" rel="bookmark" title="Container: Docker Compose on Ubuntu 16.04"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/06/docker-compose-logo-324x160.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2017/06/docker-compose-logo-324x160.png 324w, https://s24255.pcdn.co/wp-content/uploads/2017/06/docker-compose-logo-533x261.png 533w" sizes="(max-width: 324px) 100vw, 324px" alt="docker compose logo" title="Container: Docker Compose on Ubuntu 16.04"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/container-docker-compose-ubuntu-16-04/" rel="bookmark" title="Container: Docker Compose on Ubuntu 16.04">Container: Docker Compose on Ubuntu 16.04</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2018-12-03T00:45:03+00:00" >December 3, 2018</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/container-docker-compose-ubuntu-16-04/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                What is Docker Compose
+Docker Compose is a tool for running multi-container Docker applications. To configure an application’s services with Compose we use a configuration...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/postgresql-replication-tutorial/" rel="bookmark" title="PostgreSQL Replication on Ubuntu Tutorial"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/07/postgresql-logo-324x160.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2017/07/postgresql-logo-324x160.png 324w, https://s24255.pcdn.co/wp-content/uploads/2017/07/postgresql-logo-533x261.png 533w" sizes="(max-width: 324px) 100vw, 324px" alt="PostgreSQL Database System Logo" title="PostgreSQL Replication on Ubuntu Tutorial"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/postgresql-replication-tutorial/" rel="bookmark" title="PostgreSQL Replication on Ubuntu Tutorial">PostgreSQL Replication on Ubuntu Tutorial</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-11-10T18:16:43+00:00" >November 10, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/postgresql-replication-tutorial/#comments">1</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                PostgreSQL Database System
+PostgreSQL is an advanced open source Object-Relational Database Management System (or ORDBMS). It is an extensible and highly-scalable database system, meaning that...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid-->
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/rocket-chat-install-messaging-system-debian-9/" rel="bookmark" title="Rocket.Chat: How To Install The Messaging System on Debian 9"><img width="256" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/03/logo-256x160.png" alt="Rocket.Chat on Debian 9" title="Rocket.Chat: How To Install The Messaging System on Debian 9"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/rocket-chat-install-messaging-system-debian-9/" rel="bookmark" title="Rocket.Chat: How To Install The Messaging System on Debian 9">Rocket.Chat: How To Install The Messaging System on Debian 9</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-10-30T05:00:44+00:00" >October 30, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/rocket-chat-install-messaging-system-debian-9/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                What&#039;s Rocket.Chat
+Rocket.Chat is a professional, Slack-like messaging system, developed for companies wanting to privately host their own chat service. It is developed in JavaScript...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/orientdb-install-nosql-database-centos-7/" rel="bookmark" title="OrientDB: How To Install the NoSQL DataBase on CentOS 7"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/07/orientdb-324x160.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2017/07/orientdb-324x160.png 324w, https://s24255.pcdn.co/wp-content/uploads/2017/07/orientdb-533x261.png 533w, https://s24255.pcdn.co/wp-content/uploads/2017/07/orientdb-741x366.png 741w" sizes="(max-width: 324px) 100vw, 324px" alt="OrientDB NoSQL DBMS" title="OrientDB: How To Install the NoSQL DataBase on CentOS 7"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/orientdb-install-nosql-database-centos-7/" rel="bookmark" title="OrientDB: How To Install the NoSQL DataBase on CentOS 7">OrientDB: How To Install the NoSQL DataBase on CentOS 7</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-10-25T02:49:31+00:00" >October 25, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/orientdb-install-nosql-database-centos-7/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                Introduction - NoSQL and OrientDB
+When talking about databases, in general, we refer to two major families: RDBMS (Relational Database Management System), which use as...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid-->
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/business-management-system-install-weberp-ubuntu-16-04/" rel="bookmark" title="Business Management System: Install WebERP on Ubuntu 16.04"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/09/WebERP_logo.svg_-324x160.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2017/09/WebERP_logo.svg_-324x160.png 324w, https://s24255.pcdn.co/wp-content/uploads/2017/09/WebERP_logo.svg_-533x261.png 533w" sizes="(max-width: 324px) 100vw, 324px" alt="weberp business management system" title="Business Management System: Install WebERP on Ubuntu 16.04"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/business-management-system-install-weberp-ubuntu-16-04/" rel="bookmark" title="Business Management System: Install WebERP on Ubuntu 16.04">Business Management System: Install WebERP on Ubuntu 16.04</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-10-17T19:26:44+00:00" >October 17, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/business-management-system-install-weberp-ubuntu-16-04/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                What Is WebERP Accounting and Business Management System
+WebWEP is a totally web based accounting and business management system. It is particularly suitable for distributed...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/askbot-install-configure-questions-answers-framework-centos-7/" rel="bookmark" title="Askbot: How To Install and Configure the Questions and Answers Framework  on CentOS 7"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/09/q-and-a-324x160.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2017/09/q-and-a-324x160.jpg 324w, https://s24255.pcdn.co/wp-content/uploads/2017/09/q-and-a-533x261.jpg 533w" sizes="(max-width: 324px) 100vw, 324px" alt="askbot" title="Askbot: How To Install and Configure the Questions and Answers Framework  on CentOS 7"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/askbot-install-configure-questions-answers-framework-centos-7/" rel="bookmark" title="Askbot: How To Install and Configure the Questions and Answers Framework  on CentOS 7">Askbot: How To Install and Configure the Questions and Answers Framework...</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-10-11T22:34:18+00:00" >October 11, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/askbot-install-configure-questions-answers-framework-centos-7/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                Introduction
+Askbot is an open source Question and Answer (Q&amp;A) forum project. It is inspired by StackOverflow and Yahoo Answers.
+Askbot is written in Python on...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid-->
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/docker-compose-install-centos-7/" rel="bookmark" title="Docker Compose: How To Install on CentOS 7"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/06/docker-compose-logo-324x160.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2017/06/docker-compose-logo-324x160.png 324w, https://s24255.pcdn.co/wp-content/uploads/2017/06/docker-compose-logo-533x261.png 533w" sizes="(max-width: 324px) 100vw, 324px" alt="docker compose logo" title="Docker Compose: How To Install on CentOS 7"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/docker-compose-install-centos-7/" rel="bookmark" title="Docker Compose: How To Install on CentOS 7">Docker Compose: How To Install on CentOS 7</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-10-02T22:34:05+00:00" >October 2, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/docker-compose-install-centos-7/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                What is Docker Compose
+Docker Compose is a tool for running multi-container Docker applications. To configure an application’s services with Compose we use a configuration...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/monitoring-install-sensu-ubuntu-16-04-server/" rel="bookmark" title="Monitoring: How To Install Sensu on Ubuntu 16.04 Server"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/08/sensu_logo-324x160.png" alt="Sensu Monitoring Logo" title="Monitoring: How To Install Sensu on Ubuntu 16.04 Server"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/monitoring-install-sensu-ubuntu-16-04-server/" rel="bookmark" title="Monitoring: How To Install Sensu on Ubuntu 16.04 Server">Monitoring: How To Install Sensu on Ubuntu 16.04 Server</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-09-26T18:40:08+00:00" >September 26, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/monitoring-install-sensu-ubuntu-16-04-server/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                Introduction - Sensu Monitoring
+Sensu is a free and open source tool for composing a monitoring system. It is entirely written in Ruby. It uses...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid-->
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/lets-encrypt-secure-apache-web-server-ubuntu-16-04/" rel="bookmark" title="Let&#8217;s Encrypt: Secure Apache Web Server on Ubuntu 16.04"><img width="247" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/08/download-247x160.png" alt="let&#039;s encrypt logo" title="Let&#8217;s Encrypt: Secure Apache Web Server on Ubuntu 16.04"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/lets-encrypt-secure-apache-web-server-ubuntu-16-04/" rel="bookmark" title="Let&#8217;s Encrypt: Secure Apache Web Server on Ubuntu 16.04">Let&#8217;s Encrypt: Secure Apache Web Server on Ubuntu 16.04</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-09-19T18:39:57+00:00" >September 19, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/lets-encrypt-secure-apache-web-server-ubuntu-16-04/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                Why HTTPS?
+Starting with Chrome 56, the browser developed by Google marks non-secure pages containing password and credit card input fields as Not Secure in...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/taskboard-kanban-based-software-centos-7/" rel="bookmark" title="TaskBoard: Kanban-based Software on CentOS 7"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/08/Kanban-board-example-324x160.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2017/08/Kanban-board-example-324x160.jpg 324w, https://s24255.pcdn.co/wp-content/uploads/2017/08/Kanban-board-example-533x261.jpg 533w" sizes="(max-width: 324px) 100vw, 324px" alt="" title="TaskBoard: Kanban-based Software on CentOS 7"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/taskboard-kanban-based-software-centos-7/" rel="bookmark" title="TaskBoard: Kanban-based Software on CentOS 7">TaskBoard: Kanban-based Software on CentOS 7</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-09-12T20:15:06+00:00" >September 12, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/taskboard-kanban-based-software-centos-7/#respond">0</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                Introduction
+TaskBoard is a free and open source software, inspired by the Kanban board, for keeping track of tasks.
+
+Kanban is a technique for visualizing the...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid--></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" id="prev-page-td_uid_9_5c6a916d55c4d" data-td_block_id="td_uid_9_5c6a916d55c4d"><i class="td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" id="next-page-td_uid_9_5c6a916d55c4d" data-td_block_id="td_uid_9_5c6a916d55c4d"><i class="td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block --><div class="td_block_wrap td_block_1 td_uid_11_5c6a916d5fedb_rand td-pb-border-top td_block_template_1 td-column-2"  data-td-block-uid="td_uid_11_5c6a916d5fedb" ><script>var block_td_uid_11_5c6a916d5fedb = new tdBlock();
+block_td_uid_11_5c6a916d5fedb.id = "td_uid_11_5c6a916d5fedb";
+block_td_uid_11_5c6a916d5fedb.atts = '{"limit":5,"sort":"","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"2487","category_ids":"","custom_title":"Security","custom_url":"","show_child_cat":"","sub_cat_ajax":"","ajax_pagination":"","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":2,"td_ajax_preloading":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_11_5c6a916d5fedb_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_11_5c6a916d5fedb_rand","tdc_css_class_style":"td_uid_11_5c6a916d5fedb_rand_style","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+block_td_uid_11_5c6a916d5fedb.td_column_number = "2";
+block_td_uid_11_5c6a916d5fedb.block_type = "td_block_1";
+block_td_uid_11_5c6a916d5fedb.post_count = "5";
+block_td_uid_11_5c6a916d5fedb.found_posts = "67";
+block_td_uid_11_5c6a916d5fedb.header_color = "";
+block_td_uid_11_5c6a916d5fedb.ajax_pagination_infinite_stop = "";
+block_td_uid_11_5c6a916d5fedb.max_num_pages = "14";
+tdBlocksArray.push(block_td_uid_11_5c6a916d5fedb);
+</script><div class="td-block-title-wrap"><h4 class="block-title"><span class="td-pulldown-size">Security</span></h4></div><div id=td_uid_11_5c6a916d5fedb class="td_block_inner">
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_4 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/encrypt-apache-webserver-centos-7/" rel="bookmark" title="Let&#8217;s Encrypt your Apache webserver on CentOS 7"><img width="324" height="235" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2017/01/1111-324x235.jpg" alt="encrypt your apache" title="Let&#8217;s Encrypt your Apache webserver on CentOS 7"/></a></div>                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/encrypt-apache-webserver-centos-7/" rel="bookmark" title="Let&#8217;s Encrypt your Apache webserver on CentOS 7">Let&#8217;s Encrypt your Apache webserver on CentOS 7</a></h3>
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-02-07T04:00:09+00:00" >February 7, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/encrypt-apache-webserver-centos-7/#comments">21</a></div>            </div>
+
+            <div class="td-excerpt">
+                Introduction
+It was September when, with a post on its blog, Google announced that starting from Chrome 56, its browser will mark non-secure pages containing...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/wireshark-2-2-2-30-bug-fixes/" rel="bookmark" title="WireShark 2.2.2: 30 bug fixes"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/11/wireshark-100x70.png" alt="wireshark_logo" title="WireShark 2.2.2: 30 bug fixes"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/wireshark-2-2-2-30-bug-fixes/" rel="bookmark" title="WireShark 2.2.2: 30 bug fixes">WireShark 2.2.2: 30 bug fixes</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-11-21T17:53:08+00:00" >November 21, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/privilege-escalation-bug-present-9-years-linux/" rel="bookmark" title="Privilege-escalation bug present for 9 years in Linux"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="strong passwords in linux" title="Privilege-escalation bug present for 9 years in Linux"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/privilege-escalation-bug-present-9-years-linux/" rel="bookmark" title="Privilege-escalation bug present for 9 years in Linux">Privilege-escalation bug present for 9 years in Linux</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-11-07T13:38:33+00:00" >November 7, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/openssl-fixed-critical-flaw-introduced-22nd-september-patch/" rel="bookmark" title="OpenSSL fixed a critical flaw introduced on 22nd September patch"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="strong passwords in linux" title="OpenSSL fixed a critical flaw introduced on 22nd September patch"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/openssl-fixed-critical-flaw-introduced-22nd-september-patch/" rel="bookmark" title="OpenSSL fixed a critical flaw introduced on 22nd September patch">OpenSSL fixed a critical flaw introduced on 22nd September patch</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-10-04T15:14:26+00:00" >October 4, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/iptables-vs-firewalld/" rel="bookmark" title="IPTABLES VS FIREWALLD"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/05/IPTABLES-VS-FIREWALLD-1-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/05/IPTABLES-VS-FIREWALLD-1-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2016/05/IPTABLES-VS-FIREWALLD-1-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="IPTABLES VS FIREWALLD"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/iptables-vs-firewalld/" rel="bookmark" title="IPTABLES VS FIREWALLD">IPTABLES VS FIREWALLD</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-05-04T07:52:16+00:00" >May 4, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid--></div></div> <!-- ./block --><div class="td_block_wrap td_block_2 td_uid_12_5c6a916d655bd_rand td_with_ajax_pagination td-pb-border-top td_block_template_1 td-column-2 td_block_padding"  data-td-block-uid="td_uid_12_5c6a916d655bd" >
+<style>
+body .td_uid_12_5c6a916d655bd_rand .td_module_wrap:hover .entry-title a,
+            body .td_uid_12_5c6a916d655bd_rand .td-pulldown-filter-link:hover,
+            body .td_uid_12_5c6a916d655bd_rand .td-subcat-item a:hover,
+            body .td_uid_12_5c6a916d655bd_rand .td-subcat-item .td-cur-simple-item,
+            body .td_uid_12_5c6a916d655bd_rand .td_quote_on_blocks,
+            body .td_uid_12_5c6a916d655bd_rand .td-opacity-cat .td-post-category:hover,
+            body .td_uid_12_5c6a916d655bd_rand .td-opacity-read .td-read-more a:hover,
+            body .td_uid_12_5c6a916d655bd_rand .td-opacity-author .td-post-author-name a:hover,
+            body .td_uid_12_5c6a916d655bd_rand .td-instagram-user a {
+                color: #01146d;
+            }
+
+            body .td_uid_12_5c6a916d655bd_rand .td-next-prev-wrap a:hover,
+            body .td_uid_12_5c6a916d655bd_rand .td-load-more-wrap a:hover {
+                background-color: #01146d;
+                border-color: #01146d;
+            }
+
+            body .td_uid_12_5c6a916d655bd_rand .block-title > *,
+            body .td_uid_12_5c6a916d655bd_rand .td-trending-now-title,
+            body .td_uid_12_5c6a916d655bd_rand .td-read-more a,
+            body .td_uid_12_5c6a916d655bd_rand .td-weather-information:before,
+            body .td_uid_12_5c6a916d655bd_rand .td-weather-week:before,
+            body .td_uid_12_5c6a916d655bd_rand .td-subcat-dropdown:hover .td-subcat-more,
+            body .td_uid_12_5c6a916d655bd_rand .td-exchange-header:before,
+            body .td-footer-wrapper .td_uid_12_5c6a916d655bd_rand .td-post-category,
+            body .td_uid_12_5c6a916d655bd_rand .td-post-category:hover {
+                background-color: #01146d;
+            }
+            body .td-footer-wrapper .td_uid_12_5c6a916d655bd_rand .block-title > * {
+                padding: 6px 7px 5px;
+                line-height: 1;
+            }
+
+            body .td_uid_12_5c6a916d655bd_rand .block-title {
+                border-color: #01146d;
+            }
+</style><script>var block_td_uid_12_5c6a916d655bd = new tdBlock();
+block_td_uid_12_5c6a916d655bd.id = "td_uid_12_5c6a916d655bd";
+block_td_uid_12_5c6a916d655bd.atts = '{"limit":"6","sort":"","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"25","category_ids":"","custom_title":"Centos","custom_url":"","show_child_cat":"","sub_cat_ajax":"","ajax_pagination":"next_prev","header_color":"#01146d","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":2,"td_ajax_preloading":"","td_ajax_filter_type":"td_popularity_filter_fa","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_12_5c6a916d655bd_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_12_5c6a916d655bd_rand","tdc_css_class_style":"td_uid_12_5c6a916d655bd_rand_style","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+block_td_uid_12_5c6a916d655bd.td_column_number = "2";
+block_td_uid_12_5c6a916d655bd.block_type = "td_block_2";
+block_td_uid_12_5c6a916d655bd.post_count = "6";
+block_td_uid_12_5c6a916d655bd.found_posts = "119";
+block_td_uid_12_5c6a916d655bd.header_color = "#01146d";
+block_td_uid_12_5c6a916d655bd.ajax_pagination_infinite_stop = "";
+block_td_uid_12_5c6a916d655bd.max_num_pages = "20";
+tdBlocksArray.push(block_td_uid_12_5c6a916d655bd);
+</script><div class="td-block-title-wrap"><h4 class="block-title"><span class="td-pulldown-size">Centos</span></h4><div class="td-pulldown-syle-default td-subcat-filter" id="td_pulldown_td_uid_12_5c6a916d655bd"><ul class="td-subcat-list" id="td_pulldown_td_uid_12_5c6a916d655bd_list"><li class="td-subcat-item"><a class="td-subcat-link" id="td_uid_13_5c6a916d67ed2" data-td_filter_value="" data-td_block_id="td_uid_12_5c6a916d655bd" href="#">All</a></li><li class="td-subcat-item"><a class="td-subcat-link" id="td_uid_14_5c6a916d67f0f" data-td_filter_value="featured" data-td_block_id="td_uid_12_5c6a916d655bd" href="#">Featured</a></li><li class="td-subcat-item"><a class="td-subcat-link" id="td_uid_15_5c6a916d67f4a" data-td_filter_value="popular" data-td_block_id="td_uid_12_5c6a916d655bd" href="#">All time popular</a></li></ul><div class="td-subcat-dropdown"><div class="td-subcat-more" aria-haspopup="true"><span>More</span><i class="td-icon-read-down"></i></div><ul class="td-pulldown-filter-list"></ul></div></div></div><div id=td_uid_12_5c6a916d655bd class="td_block_inner">
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/new-release-of-centos-linux-7/" rel="bookmark" title="New release of CentOS Linux 7"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/12/centos-logo-324x160.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/12/centos-logo-324x160.png 324w, https://s24255.pcdn.co/wp-content/uploads/2016/12/centos-logo-533x261.png 533w" sizes="(max-width: 324px) 100vw, 324px" alt="centOS Linux 7" title="New release of CentOS Linux 7"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/new-release-of-centos-linux-7/" rel="bookmark" title="New release of CentOS Linux 7">New release of CentOS Linux 7</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/tutan/">Giuseppe Molica</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-02-01T20:56:10+00:00" >February 1, 2017</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/new-release-of-centos-linux-7/#comments">15</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                Introduction
+Since the release of Red Hat Enterprise Linux 7.3, we&#039;ve been waiting for a new version of CentOS. And, of course, it&#039;s no surprise...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_2 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/rhcsa-module-2-log-management-disk-partition-lvm-management/" rel="bookmark" title="RHCSA module 2 &#8211; Log management, disk partition and LVM management"><img width="324" height="160" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/06/RHCSA-module-2-Operating-Red-Hat-Enterprise-Server-7-1-324x160.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/06/RHCSA-module-2-Operating-Red-Hat-Enterprise-Server-7-1-324x160.png 324w, https://s24255.pcdn.co/wp-content/uploads/2016/06/RHCSA-module-2-Operating-Red-Hat-Enterprise-Server-7-1-533x261.png 533w" sizes="(max-width: 324px) 100vw, 324px" alt="" title="RHCSA module 2 &#8211; Log management, disk partition and LVM management"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/rhcsa-module-2-log-management-disk-partition-lvm-management/" rel="bookmark" title="RHCSA module 2 &#8211; Log management, disk partition and LVM management">RHCSA module 2 &#8211; Log management, disk partition and LVM management</a></h3>
+
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://www.unixmen.com/author/rajneesh/">Rajneesh Upadhyay</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-06-16T09:06:00+00:00" >June 16, 2016</time></span>                <div class="td-module-comments"><a href="https://www.unixmen.com/rhcsa-module-2-log-management-disk-partition-lvm-management/#comments">17</a></div>            </div>
+
+
+            <div class="td-excerpt">
+                Log management, disk partition and LVM management  for RHCSA-An introduction
+Log management, disk partition and LVM management are important aspect from RHCSA point of view.This...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid-->
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/install-using-netstat-linux/" rel="bookmark" title="Install and using netstat  in Linux"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/05/netstat-featured-100x70.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/05/netstat-featured-100x70.png 100w, https://s24255.pcdn.co/wp-content/uploads/2016/05/netstat-featured-218x150.png 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="Install and using netstat  in Linux"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/install-using-netstat-linux/" rel="bookmark" title="Install and using netstat  in Linux">Install and using netstat  in Linux</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-06-09T10:24:22+00:00" >June 9, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/jenkins-management-linux/" rel="bookmark" title="Jenkins Management in Linux"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/06/jenkins-management-1-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/06/jenkins-management-1-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2016/06/jenkins-management-1-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="Jenkins Management in Linux"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/jenkins-management-linux/" rel="bookmark" title="Jenkins Management in Linux">Jenkins Management in Linux</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-06-07T11:30:17+00:00" >June 7, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid-->
+
+	<div class="td-block-row">
+
+	<div class="td-block-span6">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/install-ansible-use-automation/" rel="bookmark" title="How to install Ansible and Use it in Automation"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/06/ansible-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/06/ansible-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2016/06/ansible-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="How to install Ansible and Use it in Automation"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/install-ansible-use-automation/" rel="bookmark" title="How to install Ansible and Use it in Automation">How to install Ansible and Use it in Automation</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-06-06T08:13:43+00:00" >June 6, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 -->
+
+	<div class="td-block-span6">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/automatically-install-configure-nginx-php-fpm-one-mysql-postgresql-database/" rel="bookmark" title="Automatically install configure Nginx with php-fpm and one from MySQL, PostgreSQL database"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/06/index-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/06/index-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2016/06/index-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="Automatically install configure Nginx with php-fpm and one from MySQL, PostgreSQL database"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/automatically-install-configure-nginx-php-fpm-one-mysql-postgresql-database/" rel="bookmark" title="Automatically install configure Nginx with php-fpm and one from MySQL, PostgreSQL database">Automatically install configure Nginx with php-fpm and one from MySQL, PostgreSQL...</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-06-06T06:59:03+00:00" >June 6, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span6 --></div><!--./row-fluid--></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" id="prev-page-td_uid_12_5c6a916d655bd" data-td_block_id="td_uid_12_5c6a916d655bd"><i class="td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" id="next-page-td_uid_12_5c6a916d655bd" data-td_block_id="td_uid_12_5c6a916d655bd"><i class="td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block --><div class="td_block_wrap td_block_16 td_uid_16_5c6a916d6bfa4_rand td-pb-border-top td_block_template_1 td-column-2 td_block_padding"  data-td-block-uid="td_uid_16_5c6a916d6bfa4" >
+<style>
+body .td_uid_16_5c6a916d6bfa4_rand .td_module_wrap:hover .entry-title a,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-pulldown-filter-link:hover,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-subcat-item a:hover,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-subcat-item .td-cur-simple-item,
+            body .td_uid_16_5c6a916d6bfa4_rand .td_quote_on_blocks,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-opacity-cat .td-post-category:hover,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-opacity-read .td-read-more a:hover,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-opacity-author .td-post-author-name a:hover,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-instagram-user a {
+                color: #eeee22;
+            }
+
+            body .td_uid_16_5c6a916d6bfa4_rand .td-next-prev-wrap a:hover,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-load-more-wrap a:hover {
+                background-color: #eeee22;
+                border-color: #eeee22;
+            }
+
+            body .td_uid_16_5c6a916d6bfa4_rand .block-title > *,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-trending-now-title,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-read-more a,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-weather-information:before,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-weather-week:before,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-subcat-dropdown:hover .td-subcat-more,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-exchange-header:before,
+            body .td-footer-wrapper .td_uid_16_5c6a916d6bfa4_rand .td-post-category,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-post-category:hover {
+                background-color: #eeee22;
+            }
+            body .td-footer-wrapper .td_uid_16_5c6a916d6bfa4_rand .block-title > * {
+                padding: 6px 7px 5px;
+                line-height: 1;
+            }
+
+            body .td_uid_16_5c6a916d6bfa4_rand .block-title {
+                border-color: #eeee22;
+            }
+
+            
+            body .td_uid_16_5c6a916d6bfa4_rand .block-title > *,
+            body .td_uid_16_5c6a916d6bfa4_rand .td-trending-now-title {
+                color: #000000;
+            }
+</style><script>var block_td_uid_16_5c6a916d6bfa4 = new tdBlock();
+block_td_uid_16_5c6a916d6bfa4.id = "td_uid_16_5c6a916d6bfa4";
+block_td_uid_16_5c6a916d6bfa4.atts = '{"limit":"6","sort":"","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"7","category_ids":"","custom_title":"Interviews","custom_url":"","show_child_cat":"","sub_cat_ajax":"","ajax_pagination":"","header_color":"#eeee22","header_text_color":"#000000","ajax_pagination_infinite_stop":"","td_column_number":2,"td_ajax_preloading":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_16_5c6a916d6bfa4_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_16_5c6a916d6bfa4_rand","tdc_css_class_style":"td_uid_16_5c6a916d6bfa4_rand_style","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+block_td_uid_16_5c6a916d6bfa4.td_column_number = "2";
+block_td_uid_16_5c6a916d6bfa4.block_type = "td_block_16";
+block_td_uid_16_5c6a916d6bfa4.post_count = "6";
+block_td_uid_16_5c6a916d6bfa4.found_posts = "29";
+block_td_uid_16_5c6a916d6bfa4.header_color = "#eeee22";
+block_td_uid_16_5c6a916d6bfa4.ajax_pagination_infinite_stop = "";
+block_td_uid_16_5c6a916d6bfa4.max_num_pages = "5";
+tdBlocksArray.push(block_td_uid_16_5c6a916d6bfa4);
+</script><div class="td-block-title-wrap"><h4 class="block-title"><span class="td-pulldown-size">Interviews</span></h4></div><div id=td_uid_16_5c6a916d6bfa4 class="td_block_inner td-column-2">
+
+	<div class="td-block-row">
+
+	<div class="td-block-span4">
+
+        <div class="td_module_mx7 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/learn-file-management-commnad-line-required-rhcsa/" rel="bookmark" title="Learn file management commnad line  required for RHCSA"><img width="218" height="150" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/04/Learn-file-management-commnad-line-required-for-RHCSA-2-218x150.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/04/Learn-file-management-commnad-line-required-for-RHCSA-2-218x150.png 218w, https://s24255.pcdn.co/wp-content/uploads/2016/04/Learn-file-management-commnad-line-required-for-RHCSA-2-100x70.png 100w" sizes="(max-width: 218px) 100vw, 218px" alt="" title="Learn file management commnad line  required for RHCSA"/></a></div>                            </div>
+
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/learn-file-management-commnad-line-required-rhcsa/" rel="bookmark" title="Learn file management commnad line  required for RHCSA">Learn file management commnad line  required for RHCSA</a></h3>
+                <div class="td-module-meta-info">
+                    <span class="td-post-author-name"><a href="https://www.unixmen.com/author/rajneesh/">Rajneesh Upadhyay</a> <span>-</span> </span>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-05-02T07:07:46+00:00" >May 2, 2016</time></span>                    <div class="td-module-comments"><a href="https://www.unixmen.com/learn-file-management-commnad-line-required-rhcsa/#comments">12</a></div>                </div>
+
+                <div class="td-excerpt">
+                    3.0 Introduction to Red Hat Linux Key file system
+Welcome back, in this ‘RHCSA examination preparation...                </div>
+            </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span4 -->
+
+	<div class="td-block-span4">
+
+        <div class="td_module_mx7 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/counter-strike-global-offensive-confirmed-linux/" rel="bookmark" title="Counter Strike Global Offensive Confirmed For Linux"><img width="218" height="125" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2014/03/counter-strike.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2014/03/counter-strike.jpg 616w, https://s24255.pcdn.co/wp-content/uploads/2014/03/counter-strike-300x171.jpg 300w" sizes="(max-width: 218px) 100vw, 218px" alt="" title="Counter Strike Global Offensive Confirmed For Linux"/></a></div>                            </div>
+
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/counter-strike-global-offensive-confirmed-linux/" rel="bookmark" title="Counter Strike Global Offensive Confirmed For Linux">Counter Strike Global Offensive Confirmed For Linux</a></h3>
+                <div class="td-module-meta-info">
+                    <span class="td-post-author-name"><a href="https://www.unixmen.com/author/panos/">Panos Georgiadis</a> <span>-</span> </span>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2014-03-13T10:34:41+00:00" >March 13, 2014</time></span>                    <div class="td-module-comments"><a href="https://www.unixmen.com/counter-strike-global-offensive-confirmed-linux/#respond">0</a></div>                </div>
+
+                <div class="td-excerpt">
+                    
+Gabe Newell, co-founder of Valve gave an interview and confirmed the Counter Strike Global Offensive...                </div>
+            </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span4 -->
+
+	<div class="td-block-span4">
+
+        <div class="td_module_mx7 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/interview-sancho-lerena-pandora-fms/" rel="bookmark" title="Interview With Sancho Lerena From Pandora FMS"><img width="218" height="94" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2014/01/pandora.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2014/01/pandora.png 950w, https://s24255.pcdn.co/wp-content/uploads/2014/01/pandora-300x129.png 300w" sizes="(max-width: 218px) 100vw, 218px" alt="" title="Interview With Sancho Lerena From Pandora FMS"/></a></div>                            </div>
+
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/interview-sancho-lerena-pandora-fms/" rel="bookmark" title="Interview With Sancho Lerena From Pandora FMS">Interview With Sancho Lerena From Pandora FMS</a></h3>
+                <div class="td-module-meta-info">
+                    <span class="td-post-author-name"><a href="https://www.unixmen.com/author/panos/">Panos Georgiadis</a> <span>-</span> </span>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2014-01-24T09:00:52+00:00" >January 24, 2014</time></span>                    <div class="td-module-comments"><a href="https://www.unixmen.com/interview-sancho-lerena-pandora-fms/#respond">0</a></div>                </div>
+
+                <div class="td-excerpt">
+                    Hello Unixmen readers, today we have a special guest here at our desk! Ladies and...                </div>
+            </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span4 --></div><!--./row-fluid-->
+
+	<div class="td-block-row">
+
+	<div class="td-block-span4">
+
+        <div class="td_module_mx7 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/knockd-detailed-simpler/" rel="bookmark" title="Knockd – Detailed And Simpler"><img width="203" height="150" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2013/09/port-knocking.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2013/09/port-knocking.png 302w, https://s24255.pcdn.co/wp-content/uploads/2013/09/port-knocking-300x221.png 300w" sizes="(max-width: 203px) 100vw, 203px" alt="" title="Knockd – Detailed And Simpler"/></a></div>                            </div>
+
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/knockd-detailed-simpler/" rel="bookmark" title="Knockd – Detailed And Simpler">Knockd – Detailed And Simpler</a></h3>
+                <div class="td-module-meta-info">
+                    <span class="td-post-author-name"><a href="https://www.unixmen.com/author/gokul/">gokul</a> <span>-</span> </span>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2013-09-12T09:31:05+00:00" >September 12, 2013</time></span>                    <div class="td-module-comments"><a href="https://www.unixmen.com/knockd-detailed-simpler/#respond">0</a></div>                </div>
+
+                <div class="td-excerpt">
+                    As I could see there are lot of articles about knockd and it’s implementation. So,...                </div>
+            </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span4 -->
+
+	<div class="td-block-span4">
+
+        <div class="td_module_mx7 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/exclusive-interview-garrett-damore/" rel="bookmark" title="Exclusive Interview with Illumos Founder Garrett D’Amore"><img width="200" height="52" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2012/09/OpenIndiana_Logo.png" alt="" title="Exclusive Interview with Illumos Founder Garrett D’Amore"/></a></div>                            </div>
+
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/exclusive-interview-garrett-damore/" rel="bookmark" title="Exclusive Interview with Illumos Founder Garrett D’Amore">Exclusive Interview with Illumos Founder Garrett D’Amore</a></h3>
+                <div class="td-module-meta-info">
+                    <span class="td-post-author-name"><a href="https://www.unixmen.com/author/zinovsky/">M. Zinoune</a> <span>-</span> </span>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2013-06-23T08:58:42+00:00" >June 23, 2013</time></span>                    <div class="td-module-comments"><a href="https://www.unixmen.com/exclusive-interview-garrett-damore/#respond">0</a></div>                </div>
+
+                <div class="td-excerpt">
+                    During the week, Unixmen exclusively interviewed Illumos Founder, Garrett D&#039;Amore. Garrett has worked for the...                </div>
+            </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span4 -->
+
+	<div class="td-block-span4">
+
+        <div class="td_module_mx7 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.unixmen.com/introduction-to-lanyfs/" rel="bookmark" title="Introduction to LanyFS"><img width="218" height="80" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2013/02/logo.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2013/02/logo.png 407w, https://s24255.pcdn.co/wp-content/uploads/2013/02/logo-300x110.png 300w" sizes="(max-width: 218px) 100vw, 218px" alt="" title="Introduction to LanyFS"/></a></div>                            </div>
+
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/introduction-to-lanyfs/" rel="bookmark" title="Introduction to LanyFS">Introduction to LanyFS</a></h3>
+                <div class="td-module-meta-info">
+                    <span class="td-post-author-name"><a href="https://www.unixmen.com/author/zinovsky/">M. Zinoune</a> <span>-</span> </span>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2013-02-07T21:23:58+00:00" >February 7, 2013</time></span>                    <div class="td-module-comments"><a href="https://www.unixmen.com/introduction-to-lanyfs/#respond">0</a></div>                </div>
+
+                <div class="td-excerpt">
+                    Back in July 2012, I had the privilege of talking with Dan Luedtke. He was...                </div>
+            </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span4 --></div><!--./row-fluid--></div></div> <!-- ./block --></div></div><div class="vc_column td_uid_17_5c6a916d74d93_rand  wpb_column vc_column_container td-pb-span4"><div class="wpb_wrapper"><div class="wpb_wrapper td_block_wrap vc_widget_sidebar td_uid_18_5c6a916d74e69_rand " ><aside class="widget_text td_block_template_1 widget widget_custom_html"><h4 class="block-title"><span>ABOUT US</span></h4><div class="textwidget custom-html-widget"><p>Unixmen provide Linux Howtos, Tutorials, Tips & Tricks, Opensource News. It cover most popular distros like Ubuntu, LinuxMint, Fedora, Centos. It is your Gate to the the world of Linux/Unix and Opensource in General.</p></div></aside><aside class="td_block_template_1 widget widget_execphp"><h4 class="block-title"><span>SHARE THIS ARTICLE</span></h4>			<div class="execphpwidget"><div style="margin: 1em 0; padding: 1em 0;">
+<a style="margin-bottom: 1em;" class="td-social-sharing-buttons td-social-facebook" href="https://www.facebook.com/sharer.php?u=https://www.unixmen.com/" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="td-icon-facebook"></i><div class="td-social-but-text">Share on Facebook</div></a>
+<br/><br/>
+<a class="td-social-sharing-buttons td-social-twitter" style="margin-bottom: 1em;" href="https://twitter.com/intent/tweet?text=Home;url=https://www.unixmen.com/&amp;via=Unixmen"><i class="td-icon-twitter"></i><div class="td-social-but-text">Tweet on Twitter</div></a>	        
+</div></div>
+		</aside><aside class="td_block_template_1 widget widget_execphp">			<div class="execphpwidget"></div>
+		</aside><div class="td-a-rec td-a-rec-id-sidebar  td_uid_19_5c6a916d7525c_rand td_block_template_1"><!-- /21552082/UNX_Sidebar_300x600 -->
+<div id='div-gpt-ad-1510255855724-3'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1510255855724-3'); });
+</script>
+</div></div><aside class="td_block_template_1 widget widget_text"><h4 class="block-title"><span>CONTACT US</span></h4>			<div class="textwidget"><a  href="http://s24255.p822.sites.pressdns.com/contact-us/">Contact Form</a>
+</div>
+		</aside></div><div class="td_block_wrap td_block_social_counter td_uid_20_5c6a916d753c4_rand td-pb-border-top td_block_template_1"><div class="td-block-title-wrap"></div><div class="td-social-list"><div class="td_social_type td-pb-margin-side td_social_facebook"><div class="td-social-box"><div class="td-sp td-sp-facebook"></div><span class="td_social_info">0</span><span class="td_social_info td_social_info_name">Fans</span><span class="td_social_button"><a href="https://www.facebook.com/unixmencom"  >Like</a></span></div></div><div class="td_social_type td-pb-margin-side td_social_googleplus"><div class="td-social-box"><div class="td-sp td-sp-googleplus"></div><span class="td_social_info">3,672</span><span class="td_social_info td_social_info_name">Followers</span><span class="td_social_button"><a href="https://plus.google.com/+Unixmen"  >Follow</a></span></div></div><div class="td_social_type td-pb-margin-side td_social_rss"><div class="td-social-box"><div class="td-sp td-sp-rss"></div><span class="td_social_info">3,500</span><span class="td_social_info td_social_info_name">Followers</span><span class="td_social_button"><a href="https://www.unixmen.com/feed/"  >Follow</a></span></div></div><div class="td_social_type td-pb-margin-side td_social_twitter"><div class="td-social-box"><div class="td-sp td-sp-twitter"></div><span class="td_social_info">12,635</span><span class="td_social_info td_social_info_name">Followers</span><span class="td_social_button"><a href="https://twitter.com/unixmen"  >Follow</a></span></div></div><div class="td_social_type td-pb-margin-side td_social_youtube"><div class="td-social-box"><div class="td-sp td-sp-youtube"></div><span class="td_social_info">472</span><span class="td_social_info td_social_info_name">Subscribers</span><span class="td_social_button"><a href="http://www.youtube.com/UnixmenVideos"  >Subscribe</a></span></div></div></div></div> <!-- ./block --></div></div></div></div><div id="td_uid_7_5c6a916d75566" class="tdc-row"><div class="vc_row td_uid_21_5c6a916d755a4_rand  wpb_row td-pb-row" ><div class="vc_column td_uid_22_5c6a916d7566c_rand  wpb_column vc_column_container td-pb-span12"><div class="wpb_wrapper"></div></div></div></div><div id="td_uid_9_5c6a916d7576a" class="tdc-row"><div class="vc_row td_uid_24_5c6a916d757a6_rand  wpb_row td-pb-row" ><div class="vc_column td_uid_25_5c6a916d7585c_rand  wpb_column vc_column_container td-pb-span4"><div class="wpb_wrapper"></div></div></div></div>                </div>
+                            </div> <!-- /.td-main-content-wrap -->
+
+
+            
+<!-- Instagram -->
+
+
+
+<!-- Footer -->
+<div class="td-footer-wrapper td-container-wrap ">
+    <div class="td-container">
+
+	    <div class="td-pb-row">
+		    <div class="td-pb-span12">
+			    		    </div>
+	    </div>
+
+        <div class="td-pb-row">
+
+            <div class="td-pb-span4">
+                <div class="td_block_wrap td_block_7 td_uid_27_5c6a916d75ebd_rand td-pb-border-top td_block_template_1 td-column-1 td_block_padding"  data-td-block-uid="td_uid_27_5c6a916d75ebd" ><script>var block_td_uid_27_5c6a916d75ebd = new tdBlock();
+block_td_uid_27_5c6a916d75ebd.id = "td_uid_27_5c6a916d75ebd";
+block_td_uid_27_5c6a916d75ebd.atts = '{"limit":3,"sort":"featured","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"","category_ids":"","custom_title":"EDITOR PICKS","custom_url":"","show_child_cat":"","sub_cat_ajax":"","ajax_pagination":"","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":1,"td_ajax_preloading":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_27_5c6a916d75ebd_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_27_5c6a916d75ebd_rand","tdc_css_class_style":"td_uid_27_5c6a916d75ebd_rand_style","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+block_td_uid_27_5c6a916d75ebd.td_column_number = "1";
+block_td_uid_27_5c6a916d75ebd.block_type = "td_block_7";
+block_td_uid_27_5c6a916d75ebd.post_count = "3";
+block_td_uid_27_5c6a916d75ebd.found_posts = "66";
+block_td_uid_27_5c6a916d75ebd.header_color = "";
+block_td_uid_27_5c6a916d75ebd.ajax_pagination_infinite_stop = "";
+block_td_uid_27_5c6a916d75ebd.max_num_pages = "22";
+tdBlocksArray.push(block_td_uid_27_5c6a916d75ebd);
+</script><div class="td-block-title-wrap"><h4 class="block-title"><span class="td-pulldown-size">EDITOR PICKS</span></h4></div><div id=td_uid_27_5c6a916d75ebd class="td_block_inner">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/generate-check-strong-passwords-linux/" rel="bookmark" title="How to generate and check strong passwords in Linux"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2016/09/Cyber-Security-_sized-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="strong passwords in linux" title="How to generate and check strong passwords in Linux"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/generate-check-strong-passwords-linux/" rel="bookmark" title="How to generate and check strong passwords in Linux">How to generate and check strong passwords in Linux</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2017-01-18T01:46:52+00:00" >January 18, 2017</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/prevent-ssh-disconnecting-sessions/" rel="bookmark" title="How to prevent SSH from disconnecting sessions"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/11/ssh-100x70.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/11/ssh-100x70.png 100w, https://s24255.pcdn.co/wp-content/uploads/2016/11/ssh-218x150.png 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="How to prevent SSH from disconnecting sessions"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/prevent-ssh-disconnecting-sessions/" rel="bookmark" title="How to prevent SSH from disconnecting sessions">How to prevent SSH from disconnecting sessions</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-11-30T15:08:20+00:00" >November 30, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/apt-rebuilding-package-debian/" rel="bookmark" title="APT: Rebuilding Package in Debian"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2016/09/Screenshot_20160927_234240-100x70.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2016/09/Screenshot_20160927_234240-100x70.png 100w, https://s24255.pcdn.co/wp-content/uploads/2016/09/Screenshot_20160927_234240-218x150.png 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="APT: Rebuilding Package in Debian"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/apt-rebuilding-package-debian/" rel="bookmark" title="APT: Rebuilding Package in Debian">APT: Rebuilding Package in Debian</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2016-10-04T15:15:26+00:00" >October 4, 2016</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div></div> <!-- ./block -->                            </div>
+
+            <div class="td-pb-span4">
+                <div class="td_block_wrap td_block_7 td_uid_28_5c6a916d787a5_rand td-pb-border-top td_block_template_1 td-column-1 td_block_padding"  data-td-block-uid="td_uid_28_5c6a916d787a5" ><script>var block_td_uid_28_5c6a916d787a5 = new tdBlock();
+block_td_uid_28_5c6a916d787a5.id = "td_uid_28_5c6a916d787a5";
+block_td_uid_28_5c6a916d787a5.atts = '{"limit":3,"sort":"popular","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"","category_ids":"","custom_title":"POPULAR POSTS","custom_url":"","show_child_cat":"","sub_cat_ajax":"","ajax_pagination":"","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":1,"td_ajax_preloading":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_28_5c6a916d787a5_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_28_5c6a916d787a5_rand","tdc_css_class_style":"td_uid_28_5c6a916d787a5_rand_style","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+block_td_uid_28_5c6a916d787a5.td_column_number = "1";
+block_td_uid_28_5c6a916d787a5.block_type = "td_block_7";
+block_td_uid_28_5c6a916d787a5.post_count = "3";
+block_td_uid_28_5c6a916d787a5.found_posts = "3077";
+block_td_uid_28_5c6a916d787a5.header_color = "";
+block_td_uid_28_5c6a916d787a5.ajax_pagination_infinite_stop = "";
+block_td_uid_28_5c6a916d787a5.max_num_pages = "1026";
+tdBlocksArray.push(block_td_uid_28_5c6a916d787a5);
+</script><div class="td-block-title-wrap"><h4 class="block-title"><span class="td-pulldown-size">POPULAR POSTS</span></h4></div><div id=td_uid_28_5c6a916d787a5 class="td_block_inner">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/ifconfig-command-found-centos-7-minimal-installation-quick-tip-fix/" rel="bookmark" title="&#8216;Ifconfig&#8217; Command Not Found In CentOS 7 Minimal Installation &#8211; A Quick Tip To Fix It"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2014/08/centos7-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2014/08/centos7-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2014/08/centos7-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="&#8216;Ifconfig&#8217; Command Not Found In CentOS 7 Minimal Installation &#8211; A Quick Tip To Fix It"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/ifconfig-command-found-centos-7-minimal-installation-quick-tip-fix/" rel="bookmark" title="&#8216;Ifconfig&#8217; Command Not Found In CentOS 7 Minimal Installation &#8211; A Quick Tip To Fix It">&#8216;Ifconfig&#8217; Command Not Found In CentOS 7 Minimal Installation &#8211; A...</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2014-08-11T10:19:04+00:00" >August 11, 2014</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/setting-dns-server-centos-7/" rel="bookmark" title="Setting Up DNS Server On CentOS 7"><img width="100" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2014/08/dns-100x70.jpg" srcset="https://s24255.pcdn.co/wp-content/uploads/2014/08/dns-100x70.jpg 100w, https://s24255.pcdn.co/wp-content/uploads/2014/08/dns-218x150.jpg 218w" sizes="(max-width: 100px) 100vw, 100px" alt="" title="Setting Up DNS Server On CentOS 7"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/setting-dns-server-centos-7/" rel="bookmark" title="Setting Up DNS Server On CentOS 7">Setting Up DNS Server On CentOS 7</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2014-08-20T11:48:46+00:00" >August 20, 2014</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://www.unixmen.com/installing-telnet-centosrhelscientific-linux-6-7/" rel="bookmark" title="Installing Telnet In CentOS/RHEL/Scientific Linux 6 &amp; 7"><img width="73" height="70" class="entry-thumb" src="https://s24255.pcdn.co/wp-content/uploads/2014/03/terminal.png" srcset="https://s24255.pcdn.co/wp-content/uploads/2014/03/terminal.png 600w, https://s24255.pcdn.co/wp-content/uploads/2014/03/terminal-300x289.png 300w" sizes="(max-width: 73px) 100vw, 73px" alt="" title="Installing Telnet In CentOS/RHEL/Scientific Linux 6 &amp; 7"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://www.unixmen.com/installing-telnet-centosrhelscientific-linux-6-7/" rel="bookmark" title="Installing Telnet In CentOS/RHEL/Scientific Linux 6 &amp; 7">Installing Telnet In CentOS/RHEL/Scientific Linux 6 &amp; 7</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2015-01-12T06:38:29+00:00" >January 12, 2015</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div></div> <!-- ./block -->                            </div>
+
+            <div class="td-pb-span4">
+                <div class="td_block_wrap td_block_popular_categories td_uid_29_5c6a916d7bd3c_rand widget widget_categories td-pb-border-top td_block_template_1"  data-td-block-uid="td_uid_29_5c6a916d7bd3c" ><div class="td-block-title-wrap"><h4 class="block-title"><span class="td-pulldown-size">POPULAR CATEGORY</span></h4></div><ul class="td-pb-padding-side"><li><a href="https://www.unixmen.com/category/linux-distributions/">Linux distributions<span class="td-cat-no">1475</span></a></li><li><a href="https://www.unixmen.com/category/news/software/">Software<span class="td-cat-no">601</span></a></li><li><a href="https://www.unixmen.com/category/linux-tutorials/">Linux tutorials<span class="td-cat-no">537</span></a></li><li><a href="https://www.unixmen.com/category/news/">News<span class="td-cat-no">429</span></a></li><li><a href="https://www.unixmen.com/category/opensource/">Opensource<span class="td-cat-no">343</span></a></li><li><a href="https://www.unixmen.com/category/frequently-asked-questions/">Frequently Asked Questions<span class="td-cat-no">313</span></a></li><li><a href="https://www.unixmen.com/category/unix/">Unix<span class="td-cat-no">168</span></a></li><li><a href="https://www.unixmen.com/category/news/releases/">Releases<span class="td-cat-no">139</span></a></li><li><a href="https://www.unixmen.com/category/linux-distributions/centos/">CentOS<span class="td-cat-no">119</span></a></li></ul></div> <!-- ./block -->                            </div>
+        </div>
+    </div>
+    <div class="td-footer-bottom-full">
+        <div class="td-container">
+            <div class="td-pb-row">
+                <div class="td-pb-span3"><aside class="footer-logo-wrap"><a href="https://www.unixmen.com/"><img class="td-retina-data" src="https://s24255.pcdn.co/wp-content/uploads/2016/02/unixmen-logo.png" data-retina="https://s24255.pcdn.co/wp-content/uploads/2016/02/unixmen-logo-retina-300x177.png" alt="Unixmen" title="Unixmen" width="" /></a></aside></div><div class="td-pb-span5"><aside class="footer-text-wrap"><div class="block-title"><span>ABOUT US</span></div>Unixmen provide Linux Howtos, Tutorials, Tips & Tricks, Opensource News. It cover most popular distros like Ubuntu, LinuxMint, Fedora, Centos. It is your Gate to the the world of  Linux/Unix and Opensource in General.
+<br><br>
+<a href="/unixmen-privacy-policy/" style="font-weight: bold;">Privacy Policy</a><div class="footer-email-wrap">Contact us: <a href="/cdn-cgi/l/email-protection#89f9fbe0ffe8eaf0a9a1e8fda0a9fafcfbecfafee0effdeae8f9e0fde8e5a9a1ede6fda0a9eae6e4">privacy (at) sureswiftcapital (dot) com</a></div></aside></div><div class="td-pb-span4"><aside class="footer-social-wrap td-social-style-2"><div class="block-title"><span>FOLLOW US</span></div>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.facebook.com/unixmencom" title="Facebook">
+                <i class="td-icon-font td-icon-facebook"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://plus.google.com/+Unixmen" title="Google+">
+                <i class="td-icon-font td-icon-googleplus"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.linkedin.com/groups/3899550/profile" title="Linkedin">
+                <i class="td-icon-font td-icon-linkedin"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.pinterest.com/unixmen/" title="Pinterest">
+                <i class="td-icon-font td-icon-pinterest"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.reddit.com/domain/unixmen.com" title="Reddit">
+                <i class="td-icon-font td-icon-reddit"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="http://www.unixmen.com/feed/" title="RSS">
+                <i class="td-icon-font td-icon-rss"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://twitter.com/unixmen" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.youtube.com/user/UnixmenVideos" title="Youtube">
+                <i class="td-icon-font td-icon-youtube"></i>
+            </a>
+        </span></aside></div>            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sub Footer -->
+    <div class="td-sub-footer-container td-container-wrap ">
+        <div class="td-container">
+            <div class="td-pb-row">
+                <div class="td-pb-span td-sub-footer-menu">
+                                        </div>
+
+                <div class="td-pb-span td-sub-footer-copy">
+                    &copy; Copyright 2015 - Newspaper 6 by TagDiv                </div>
+            </div>
+        </div>
+    </div>
+</div><!--close td-outer-wrap-->
+
+
+
+    <!--
+
+        Theme: Newspaper by tagDiv.com 2017
+        Version: 8.1 (rara)
+        Deploy mode: deploy
+        
+        uid: 5c6a916d7c5fc
+    -->
+
+    
+<!-- Custom css form theme panel -->
+<style type="text/css" media="screen">
+/* custom css theme panel */
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+.td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+.td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a,
+.td-header-wrap .black-menu .sf-menu > li > a:hover,
+.td-header-wrap .black-menu .sf-menu > .sfHover > a,
+.td-header-style-12 .td-header-menu-wrap-full,
+.sf-menu > .current-menu-item > a:after,
+.sf-menu > .current-menu-ancestor > a:after,
+.sf-menu > .current-category-ancestor > a:after,
+.sf-menu > li:hover > a:after,
+.sf-menu > .sfHover > a:after,
+.td-header-style-12 .td-affix,
+.header-search-wrap .td-drop-down-search:after,
+.header-search-wrap .td-drop-down-search .btn:hover,
+input[type=submit]:hover,
+.td-read-more a,
+.td-post-category:hover,
+.td-grid-style-1.td-hover-1 .td-big-grid-post:hover .td-post-category,
+.td-grid-style-5.td-hover-1 .td-big-grid-post:hover .td-post-category,
+.td_top_authors .td-active .td-author-post-count,
+.td_top_authors .td-active .td-author-comments-count,
+.td_top_authors .td_mod_wrap:hover .td-author-post-count,
+.td_top_authors .td_mod_wrap:hover .td-author-comments-count,
+.td-404-sub-sub-title a:hover,
+.td-search-form-widget .wpb_button:hover,
+.td-rating-bar-wrap div,
+.td_category_template_3 .td-current-sub-category,
+.dropcap,
+.td_wrapper_video_playlist .td_video_controls_playlist_wrapper,
+.wpb_default,
+.wpb_default:hover,
+.td-left-smart-list:hover,
+.td-right-smart-list:hover,
+.woocommerce-checkout .woocommerce input.button:hover,
+.woocommerce-page .woocommerce a.button:hover,
+.woocommerce-account div.woocommerce .button:hover,
+#bbpress-forums button:hover,
+.bbp_widget_login .button:hover,
+.td-footer-wrapper .td-post-category,
+.td-footer-wrapper .widget_product_search input[type=\"submit\"]:hover,
+.woocommerce .product a.button:hover,
+.woocommerce .product #respond input#submit:hover,
+.woocommerce .checkout input#place_order:hover,
+.woocommerce .woocommerce.widget .button:hover,
+.single-product .product .summary .cart .button:hover,
+.woocommerce-cart .woocommerce table.cart .button:hover,
+.woocommerce-cart .woocommerce .shipping-calculator-form .button:hover,
+.td-next-prev-wrap a:hover,
+.td-load-more-wrap a:hover,
+.td-post-small-box a:hover,
+.page-nav .current,
+.page-nav:first-child > div,
+.td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+.td_category_template_4 .td-category-siblings .td-category a:hover,
+#bbpress-forums .bbp-pagination .current,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
+.td-theme-slider:hover .slide-meta-cat a,
+a.vc_btn-black:hover,
+.td-trending-now-wrapper:hover .td-trending-now-title,
+.td-scroll-up,
+.td-smart-list-button:hover,
+.td-weather-information:before,
+.td-weather-week:before,
+.td_block_exchange .td-exchange-header:before,
+.td_block_big_grid_9.td-grid-style-1 .td-post-category,
+.td_block_big_grid_9.td-grid-style-5 .td-post-category,
+.td-grid-style-6.td-hover-1 .td-module-thumb:after,
+.td-pulldown-syle-2 .td-subcat-dropdown ul:after,
+.td_block_template_9 .td-block-title:after,
+.td_block_template_15 .td-block-title:before {
+
+    background-color: #328ec3;
+
+}
+
+.global-block-template-4 .td-related-title .td-cur-simple-item:before {
+
+    border-color: #328ec3 transparent transparent transparent !important;
+
+}
+
+.woocommerce .woocommerce-message .button:hover,
+.woocommerce .woocommerce-error .button:hover,
+.woocommerce .woocommerce-info .button:hover,
+.global-block-template-4 .td-related-title .td-cur-simple-item,
+.global-block-template-3 .td-related-title .td-cur-simple-item,
+.global-block-template-9 .td-related-title:after {
+
+    background-color: #328ec3 !important;
+
+}
+
+.woocommerce .product .onsale,
+.woocommerce.widget .ui-slider .ui-slider-handle {
+
+    background: none #328ec3;
+
+}
+
+.woocommerce.widget.widget_layered_nav_filters ul li a {
+
+    background: none repeat scroll 0 0 #328ec3 !important;
+
+}
+
+a,
+cite a:hover,
+.td_mega_menu_sub_cats .cur-sub-cat,
+.td-mega-span h3 a:hover,
+.td_mod_mega_menu:hover .entry-title a,
+.header-search-wrap .result-msg a:hover,
+.top-header-menu li a:hover,
+.top-header-menu .current-menu-item > a,
+.top-header-menu .current-menu-ancestor > a,
+.top-header-menu .current-category-ancestor > a,
+.td-social-icon-wrap > a:hover,
+.td-header-sp-top-widget .td-social-icon-wrap a:hover,
+.td-page-content blockquote p,
+.td-post-content blockquote p,
+.mce-content-body blockquote p,
+.comment-content blockquote p,
+.wpb_text_column blockquote p,
+.td_block_text_with_title blockquote p,
+.td_module_wrap:hover .entry-title a,
+.td-subcat-filter .td-subcat-list a:hover,
+.td-subcat-filter .td-subcat-dropdown a:hover,
+.td_quote_on_blocks,
+.dropcap2,
+.dropcap3,
+.td_top_authors .td-active .td-authors-name a,
+.td_top_authors .td_mod_wrap:hover .td-authors-name a,
+.td-post-next-prev-content a:hover,
+.author-box-wrap .td-author-social a:hover,
+.td-author-name a:hover,
+.td-author-url a:hover,
+.td_mod_related_posts:hover h3 > a,
+.td-post-template-11 .td-related-title .td-related-left:hover,
+.td-post-template-11 .td-related-title .td-related-right:hover,
+.td-post-template-11 .td-related-title .td-cur-simple-item,
+.td-post-template-11 .td_block_related_posts .td-next-prev-wrap a:hover,
+.comment-reply-link:hover,
+.logged-in-as a:hover,
+#cancel-comment-reply-link:hover,
+.td-search-query,
+.td-category-header .td-pulldown-category-filter-link:hover,
+.td-category-siblings .td-subcat-dropdown a:hover,
+.td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
+.widget a:hover,
+.td_wp_recentcomments a:hover,
+.archive .widget_archive .current,
+.archive .widget_archive .current a,
+.widget_calendar tfoot a:hover,
+.woocommerce a.added_to_cart:hover,
+.woocommerce-account .woocommerce-MyAccount-navigation a:hover,
+#bbpress-forums li.bbp-header .bbp-reply-content span a:hover,
+#bbpress-forums .bbp-forum-freshness a:hover,
+#bbpress-forums .bbp-topic-freshness a:hover,
+#bbpress-forums .bbp-forums-list li a:hover,
+#bbpress-forums .bbp-forum-title:hover,
+#bbpress-forums .bbp-topic-permalink:hover,
+#bbpress-forums .bbp-topic-started-by a:hover,
+#bbpress-forums .bbp-topic-started-in a:hover,
+#bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink,
+#bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink,
+.widget_display_replies .bbp-author-name,
+.widget_display_topics .bbp-author-name,
+.footer-text-wrap .footer-email-wrap a,
+.td-subfooter-menu li a:hover,
+.footer-social-wrap a:hover,
+a.vc_btn-black:hover,
+.td-smart-list-dropdown-wrap .td-smart-list-button:hover,
+.td_module_17 .td-read-more a:hover,
+.td_module_18 .td-read-more a:hover,
+.td_module_19 .td-post-author-name a:hover,
+.td-instagram-user a,
+.td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span,
+.td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i,
+.td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span,
+.td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i,
+.td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
+.td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover i,
+.td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover,
+.td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item,
+.global-block-template-2 .td-related-title .td-cur-simple-item,
+.global-block-template-5 .td-related-title .td-cur-simple-item,
+.global-block-template-6 .td-related-title .td-cur-simple-item,
+.global-block-template-7 .td-related-title .td-cur-simple-item,
+.global-block-template-8 .td-related-title .td-cur-simple-item,
+.global-block-template-9 .td-related-title .td-cur-simple-item,
+.global-block-template-10 .td-related-title .td-cur-simple-item,
+.global-block-template-11 .td-related-title .td-cur-simple-item,
+.global-block-template-12 .td-related-title .td-cur-simple-item,
+.global-block-template-13 .td-related-title .td-cur-simple-item,
+.global-block-template-14 .td-related-title .td-cur-simple-item,
+.global-block-template-15 .td-related-title .td-cur-simple-item,
+.global-block-template-16 .td-related-title .td-cur-simple-item,
+.global-block-template-17 .td-related-title .td-cur-simple-item,
+.td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+.td-theme-wrap .sf-menu ul .sfHover > a,
+.td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+.td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+.td-theme-wrap .sf-menu ul .current-menu-item > a,
+.td_outlined_btn {
+
+    color: #328ec3;
+
+}
+
+a.vc_btn-black.vc_btn_square_outlined:hover,
+a.vc_btn-black.vc_btn_outlined:hover,
+.td-mega-menu-page .wpb_content_element ul li a:hover,
+.td-theme-wrap .td-aj-search-results .td_module_wrap:hover .entry-title a,
+.td-theme-wrap .header-search-wrap .result-msg a:hover {
+
+    color: #328ec3 !important;
+
+}
+
+.td-next-prev-wrap a:hover,
+.td-load-more-wrap a:hover,
+.td-post-small-box a:hover,
+.page-nav .current,
+.page-nav:first-child > div,
+.td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+.td_category_template_4 .td-category-siblings .td-category a:hover,
+#bbpress-forums .bbp-pagination .current,
+.post .td_quote_box,
+.page .td_quote_box,
+a.vc_btn-black:hover,
+.td_block_template_5 .td-block-title > *,
+.td_outlined_btn {
+
+    border-color: #328ec3;
+
+}
+
+.td_wrapper_video_playlist .td_video_currently_playing:after {
+
+    border-color: #328ec3 !important;
+
+}
+
+.header-search-wrap .td-drop-down-search:before {
+
+    border-color: transparent transparent #328ec3 transparent;
+
+}
+
+.block-title > span,
+.block-title > a,
+.block-title > label,
+.widgettitle,
+.widgettitle:after,
+.td-trending-now-title,
+.td-trending-now-wrapper:hover .td-trending-now-title,
+.wpb_tabs li.ui-tabs-active a,
+.wpb_tabs li:hover a,
+.vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab.vc_active > a,
+.vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab:hover > a,
+.td_block_template_1 .td-related-title .td-cur-simple-item,
+.woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+.td-subcat-filter .td-subcat-dropdown:hover .td-subcat-more,
+.td_3D_btn,
+.td_shadow_btn,
+.td_default_btn,
+.td_round_btn,
+.td_outlined_btn:hover {
+
+    background-color: #328ec3;
+
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+
+    background-color: #328ec3 !important;
+
+}
+
+.block-title,
+.td_block_template_1 .td-related-title,
+.wpb_tabs .wpb_tabs_nav,
+.vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container,
+.woocommerce div.product .woocommerce-tabs ul.tabs:before {
+
+    border-color: #328ec3;
+
+}
+
+.td_block_wrap .td-subcat-item a.td-cur-simple-item {
+
+    color: #328ec3;
+
+}
+
+.td-grid-style-4 .entry-title {
+
+    background-color: rgba(50, 142, 195, 0.7);
+
+}
+
+.block-title > span,
+.block-title > span > a,
+.block-title > a,
+.block-title > label,
+.widgettitle,
+.widgettitle:after,
+.td-trending-now-title,
+.td-trending-now-wrapper:hover .td-trending-now-title,
+.wpb_tabs li.ui-tabs-active a,
+.wpb_tabs li:hover a,
+.vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab.vc_active > a,
+.vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab:hover > a,
+.td_block_template_1 .td-related-title .td-cur-simple-item,
+.woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+.td-subcat-filter .td-subcat-dropdown:hover .td-subcat-more,
+.td-weather-information:before,
+.td-weather-week:before,
+.td_block_exchange .td-exchange-header:before,
+.td-theme-wrap .td_block_template_3 .td-block-title > *,
+.td-theme-wrap .td_block_template_4 .td-block-title > *,
+.td-theme-wrap .td_block_template_7 .td-block-title > *,
+.td-theme-wrap .td_block_template_9 .td-block-title:after,
+.td-theme-wrap .td_block_template_10 .td-block-title::before,
+.td-theme-wrap .td_block_template_11 .td-block-title::before,
+.td-theme-wrap .td_block_template_11 .td-block-title::after,
+.td-theme-wrap .td_block_template_14 .td-block-title,
+.td-theme-wrap .td_block_template_15 .td-block-title:before,
+.td-theme-wrap .td_block_template_17 .td-block-title:before {
+
+    background-color: #222222;
+
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+
+    background-color: #222222 !important;
+
+}
+
+.block-title,
+.td_block_template_1 .td-related-title,
+.wpb_tabs .wpb_tabs_nav,
+.vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container,
+.woocommerce div.product .woocommerce-tabs ul.tabs:before,
+.td-theme-wrap .td_block_template_5 .td-block-title > *,
+.td-theme-wrap .td_block_template_17 .td-block-title,
+.td-theme-wrap .td_block_template_17 .td-block-title::before {
+
+    border-color: #222222;
+
+}
+
+.td-theme-wrap .td_block_template_4 .td-block-title > *:before,
+.td-theme-wrap .td_block_template_17 .td-block-title::after {
+
+    border-color: #222222 transparent transparent transparent;
+
+}
+
+.td-header-wrap .td-header-top-menu-full,
+.td-header-wrap .top-header-menu .sub-menu {
+
+    background-color: #328ec3;
+
+}
+
+.td-header-style-8 .td-header-top-menu-full {
+
+    background-color: transparent;
+
+}
+
+.td-header-style-8 .td-header-top-menu-full .td-header-top-menu {
+
+    background-color: #328ec3;
+
+    padding-left: 15px;
+
+    padding-right: 15px;
+
+}
+
+.td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+.td-header-wrap .td-header-top-menu-full {
+
+    border-bottom: none;
+
+}
+
+.td-header-top-menu,
+.td-header-top-menu a,
+.td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+.td-header-wrap .td-header-top-menu-full a,
+.td-header-style-8 .td-header-top-menu,
+.td-header-style-8 .td-header-top-menu a {
+
+    color: #ffffff;
+
+}
+
+.top-header-menu .current-menu-item > a,
+.top-header-menu .current-menu-ancestor > a,
+.top-header-menu .current-category-ancestor > a,
+.top-header-menu li a:hover {
+
+    color: #f2f2f2;
+
+}
+
+.td-header-wrap .td-header-sp-top-widget .td-icon-font {
+
+    color: #ffffff;
+
+}
+
+.td-header-wrap .td-header-sp-top-widget i.td-icon-font:hover {
+
+    color: #f2f2f2;
+
+}
+
+.sf-menu > .current-menu-item > a:after,
+.sf-menu > .current-menu-ancestor > a:after,
+.sf-menu > .current-category-ancestor > a:after,
+.sf-menu > li:hover > a:after,
+.sf-menu > .sfHover > a:after,
+.td_block_mega_menu .td-next-prev-wrap a:hover,
+.td-mega-span .td-post-category:hover,
+.td-header-wrap .black-menu .sf-menu > li > a:hover,
+.td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+.td-header-wrap .black-menu .sf-menu > .sfHover > a,
+.header-search-wrap .td-drop-down-search:after,
+.header-search-wrap .td-drop-down-search .btn:hover,
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+.td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+.td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a {
+
+    background-color: #328ec3;
+
+}
+
+.td_block_mega_menu .td-next-prev-wrap a:hover {
+
+    border-color: #328ec3;
+
+}
+
+.header-search-wrap .td-drop-down-search:before {
+
+    border-color: transparent transparent #328ec3 transparent;
+
+}
+
+.td_mega_menu_sub_cats .cur-sub-cat,
+.td_mod_mega_menu:hover .entry-title a,
+.td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+.td-theme-wrap .sf-menu ul .sfHover > a,
+.td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+.td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+.td-theme-wrap .sf-menu ul .current-menu-item > a {
+
+    color: #328ec3;
+
+}
+
+.td-sub-footer-container {
+
+    background-color: #000000;
+
+}
+
+.post .td-post-header .entry-title {
+
+    color: #1e73be;
+
+}
+
+.td_module_15 .entry-title a {
+
+    color: #1e73be;
+
+}
+
+.td-post-content h1,
+.td-post-content h2,
+.td-post-content h3,
+.td-post-content h4,
+.td-post-content h5,
+.td-post-content h6 {
+    color: #1e73be;
+}
+
+.top-header-menu > li > a,
+.td-weather-top-widget .td-weather-now .td-big-degrees,
+.td-weather-top-widget .td-weather-header .td-weather-city,
+.td-header-sp-top-menu .td_data_time {
+    font-size: 12px;
+}
+
+ul.sf-menu > .td-menu-item > a {
+    font-size: 12px;
+}
+
+.post .td-post-header .entry-title {
+    font-family: Cabin;
+}
+
+.widget .td-social-sharing-buttons{
+    color: white;
+}
+
+#td-header-search-button{
+    margin: 1em;
+}
+
+
+
+#taboola-below-article-thumbnails{
+    margin-top: 2em;
+}
+</style>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.unixmen.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var cdv8Gdpr = {"popupBackgroundColor":"#edeff5","popupTextColor":"#838391","btnBackgroundColor":"#4b81e8","bannerMessage":"This website uses cookies to ensure you get the best experience on our website.","dismissBtnText":"Accept!","policyLinkText":"Read Our Privacy Policy","policyLinkTextURL":"https:\/\/www.unixmen.com\/unixmen-privacy-policy\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-content/plugins/gdpr-enhancements-master/assets/js/cdv8-gdpr.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var qpprFrontData = {"linkData":{"https:\/\/www.unixmen.com\/setup-backup-server-using-bacula-webmin-ubuntu-14-04\/":[0,0,""],"https:\/\/www.unixmen.com\/openkm-open-source-document-management-system\/":[0,0,""],"https:\/\/www.unixmen.com\/grive-unofficial-open-source-linux-client-google-drive\/":[0,0,""],"https:\/\/www.unixmen.com\/retroshare-a-next-generation-secure-communication-and-file-sharing-platforn\/":[0,0,""],"https:\/\/www.unixmen.com\/how-to-share-files-over-network-using-nitroshare\/":[0,0,""],"https:\/\/www.unixmen.com\/install-easy-hosting-control-panel-ehcp-in-ubuntu-1210-server-debian-6\/":[0,0,""],"https:\/\/www.unixmen.com\/install-configure-nagios-4-ubuntu-14-1014-04\/":[0,0,""],"https:\/\/www.unixmen.com\/setup-local-repository-ubuntu-14-0413-1013-04-server\/":[0,0,""],"https:\/\/www.unixmen.com\/setup-local-repository-with-debian-7\/":[0,0,""],"https:\/\/www.unixmen.com\/build-your-own-linux-system-with-suse-studio\/":[0,0,""],"https:\/\/www.unixmen.com\/install-configure-pxe-server-ubuntu-14-04-lts\/":[0,0,""],"https:\/\/www.unixmen.com\/setup-apache-virtual-hosts-on-ubuntu-15-04\/":[0,0,""],"https:\/\/www.unixmen.com\/how-to-install-lemp-stack-on-ubuntu-15-04\/":[0,0,""],"https:\/\/www.unixmen.com\/how-to-install-lamp-stack-on-ubuntu-15-04\/":[0,0,""],"https:\/\/www.unixmen.com\/setup-nginx-server-blocks-virtual-hosts-on-ubuntu-15-04\/":[0,0,""],"https:\/\/www.unixmen.com\/fedora-23-beta-is-out-upgrade-to-fedora-23-from-fedora-22\/":[0,0,""],"https:\/\/www.unixmen.com\/how-to-install-lamp-stack-apache-mariadb-and-php-in-fedora-22\/":[0,0,""],"https:\/\/www.unixmen.com\/install-lemp-server-nginx-mariadb-and-php-on-fedora-22\/":[0,0,""],"https:\/\/www.unixmen.com\/install-postgresql-9-4-phppgadmin-ubuntu-14-10\/":[0,0,""],"https:\/\/www.unixmen.com\/setup-ftp-server-opensuse-13-213-1\/":[0,0,""],"https:\/\/www.unixmen.com\/setup-nfs-server-opensuse-13-1\/":[0,0,""],"https:\/\/www.unixmen.com\/install-dns-server-ubuntu-server-13-10\/":[0,0,""],"https:\/\/www.unixmen.com\/how-to-setup-dns-server-in-ubuntu\/":[0,0,""],"https:\/\/www.unixmen.com\/install-oracle-virtualbox-and-manage-it-using-phpvirtualbox-on-ubuntu-15-04-headless-server\/":[0,0,""],"https:\/\/www.unixmen.com\/install-and-configure-openldap-in-ubuntu-15-04-and-debian-8\/":[0,0,""],"https:\/\/www.unixmen.com\/how-to-install-nagios-4-1-in-ubuntu-15-04\/":[0,0,""],"https:\/\/www.unixmen.com\/how-to-install-linux-kernel-4-2-3\/":[0,0,""]},"siteURL":"https:\/\/www.unixmen.com","siteURLq":"https:\/\/www.unixmen.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-content/plugins/quick-pagepost-redirect-plugin/js/qppr_frontend_script.min.js?ver=5.1.8'></script>
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-content/themes/Newspaper/js/tagdiv_theme.min.js?ver=8.1'></script>
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-includes/js/comment-reply.min.js?ver=2398cf47d310762017a7537a4efdd57b'></script>
+<script type='text/javascript' src='https://s24255.pcdn.co/wp-includes/js/wp-embed.min.js?ver=2398cf47d310762017a7537a4efdd57b'></script>
+
+<!-- JS generated by theme -->
+
+<script>
+    
+
+	
+
+		(function(){
+			var html_jquery_obj = jQuery('html');
+
+			if (html_jquery_obj.length && (html_jquery_obj.is('.ie8') || html_jquery_obj.is('.ie9'))) {
+
+				var path = 'https://s24255.pcdn.co/wp-content/themes/Newspaper/style.css';
+
+				jQuery.get(path, function(data) {
+
+					var str_split_separator = '#td_css_split_separator';
+					var arr_splits = data.split(str_split_separator);
+					var arr_length = arr_splits.length;
+
+					if (arr_length > 1) {
+
+						var dir_path = 'https://s24255.pcdn.co/wp-content/themes/Newspaper';
+						var splited_css = '';
+
+						for (var i = 0; i < arr_length; i++) {
+							if (i > 0) {
+								arr_splits[i] = str_split_separator + ' ' + arr_splits[i];
+							}
+							//jQuery('head').append('<style>' + arr_splits[i] + '</style>');
+
+							var formated_str = arr_splits[i].replace(/\surl\(\'(?!data\:)/gi, function regex_function(str) {
+								return ' url(\'' + dir_path + '/' + str.replace(/url\(\'/gi, '').replace(/^\s+|\s+$/gm,'');
+							});
+
+							splited_css += "<style>" + formated_str + "</style>";
+						}
+
+						var td_theme_css = jQuery('link#td-theme-css');
+
+						if (td_theme_css.length) {
+							td_theme_css.after(splited_css);
+						}
+					}
+				});
+			}
+		})();
+
+	
+	
+</script>
+
+
+
+			<div id="tdw-css-writer" style="display: none" class="tdw-drag-dialog tdc-window-sidebar">
+				<header>
+
+				
+					<a title="Editor" class="tdw-tab tdc-tab-active" href="#" data-tab-content="tdw-tab-editor">Edit with Live CSS</a>
+					<div class="tdw-less-info" title="This will be red when errors are detected in your CSS and LESS"></div>
+				
+				</header>
+				<div class="tdw-content">
+
+					
+					<div class="tdw-tabs-content tdw-tab-editor tdc-tab-content-active">
+
+
+						<script>
+
+							(function(jQuery, undefined) {
+
+								jQuery(window).ready(function() {
+
+									if ( 'undefined' !== typeof tdcAdminIFrameUI ) {
+										var $liveIframe  = tdcAdminIFrameUI.getLiveIframe();
+
+										if ( $liveIframe.length ) {
+											$liveIframe.load(function() {
+												$liveIframe.contents().find( 'body').append( '<textarea class="tdw-css-writer-editor" style="display: none"></textarea>' );
+											});
+										}
+									}
+
+								});
+
+							})(jQuery);
+
+						</script>
+
+
+						<textarea class="tdw-css-writer-editor td_live_css_uid_1_5c6a916d7c800"></textarea>
+						<div id="td_live_css_uid_1_5c6a916d7c800" class="td-code-editor"></div>
+
+
+						<script>
+							jQuery(window).load(function (){
+
+								if ( 'undefined' !== typeof tdLiveCssInject ) {
+
+									tdLiveCssInject.init();
+
+
+									var editor_textarea = jQuery('.td_live_css_uid_1_5c6a916d7c800');
+									var languageTools = ace.require("ace/ext/language_tools");
+									var tdcCompleter = {
+										getCompletions: function (editor, session, pos, prefix, callback) {
+											if (prefix.length === 0) {
+												callback(null, []);
+												return
+											}
+
+											if ('undefined' !== typeof tdcAdminIFrameUI) {
+
+												var data = {
+													error: undefined,
+													getShortcode: ''
+												};
+
+												tdcIFrameData.getShortcodeFromData(data);
+
+												if (!_.isUndefined(data.error)) {
+													tdcDebug.log(data.error);
+												}
+
+												if (!_.isUndefined(data.getShortcode)) {
+
+													var regex = /el_class=\"([A-Za-z0-9_-]*\s*)+\"/g,
+														results = data.getShortcode.match(regex);
+
+													var elClasses = {};
+
+													for (var i = 0; i < results.length; i++) {
+														var currentClasses = results[i]
+															.replace('el_class="', '')
+															.replace('"', '')
+															.split(' ');
+
+														for (var j = 0; j < currentClasses.length; j++) {
+															if (_.isUndefined(elClasses[currentClasses[j]])) {
+																elClasses[currentClasses[j]] = '';
+															}
+														}
+													}
+
+													var arrElClasses = [];
+
+													for (var prop in elClasses) {
+														arrElClasses.push(prop);
+													}
+
+													callback(null, arrElClasses.map(function (item) {
+														return {
+															name: item,
+															value: item,
+															meta: 'in_page'
+														}
+													}));
+												}
+											}
+										}
+									};
+									languageTools.addCompleter(tdcCompleter);
+
+									window.editor = ace.edit("td_live_css_uid_1_5c6a916d7c800");
+
+									// 'change' handler is written as function because it's called by tdc_on_add_css_live_components (of wp_footer hook)
+									// We did it to reattach the existing compiled css to the new content received from server.
+									window.editorChangeHandler = function () {
+										//tdwState.lessWasEdited = true;
+
+										window.onbeforeunload = function () {
+											if (tdwState.lessWasEdited) {
+												return "You have attempted to leave this page. Are you sure?";
+											}
+											return false;
+										};
+
+										var editorValue = editor.getSession().getValue();
+
+										editor_textarea.val(editorValue);
+
+										if ('undefined' !== typeof tdcAdminIFrameUI) {
+											tdcAdminIFrameUI.getLiveIframe().contents().find('.tdw-css-writer-editor:first').val(editorValue);
+
+											// Mark the content as modified
+											// This is important for showing info when composer closes
+                                            tdcMain.setContentModified();
+										}
+
+										tdLiveCssInject.less();
+									};
+
+									editor.getSession().setValue(editor_textarea.val());
+									editor.getSession().on('change', editorChangeHandler);
+
+									editor.setTheme("ace/theme/textmate");
+									editor.setShowPrintMargin(false);
+									editor.getSession().setMode("ace/mode/less");
+									editor.setOptions({
+										enableBasicAutocompletion: true,
+										enableSnippets: true,
+										enableLiveAutocompletion: false
+									});
+
+								}
+
+							});
+						</script>
+
+					</div>
+				</div>
+
+				<footer>
+
+					
+						<a href="#" class="tdw-save-css">Save</a>
+						<div class="tdw-more-info-text">Write CSS OR LESS and hit save. CTRL + SPACE for auto-complete.</div>
+
+					
+					<div class="tdw-resize"></div>
+				</footer>
+			</div>
+			<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"267e0eb6b8","applicationID":"113621062","transactionName":"NQFQZktQXkICV0FdWwxLc1FNWF9fTERUU1E=","queueTime":0,"applicationTime":368,"atts":"GUZTEANKTUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

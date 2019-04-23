@@ -1,0 +1,1228 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "blog",
+        "name" : "Run your Coursera Jupyter Notebook locally",
+        "headline" : "Run your Coursera Jupyter Notebook locally",
+        "description" : "While completing the Coursera Deep Learning specialization, I started to wonder whether it would be possible to run the Jupyter Notebooks from the exercises on your local machine (or on a different server for that matter).
+I thought it would be convenient to:
+ Have access after you&rsquo;ve finished the course.
+Once you have finished the course, it would be interesting to still be able to read, run and experiment with the Notebooks from the course.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-03-01 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-03-01 00:00:00 &#43;0000 UTC",
+        "url" : "/blog/coursera-jupyter-locally/",
+        "wordCount" : "855",
+        "keywords" : [ "Deep Learning","Machine Learning","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Run your Coursera Jupyter Notebook locally</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.40.3" />
+        
+
+
+        
+            <meta name="author" content="Jan Van de Poel">
+        
+        
+            
+                <meta name="description" content="Zero to Singularity, practical deep learning.">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Run your Coursera Jupyter Notebook locally"/>
+<meta name="twitter:description" content="While completing the Coursera Deep Learning specialization, I started to wonder whether it would be possible to run the Jupyter Notebooks from the exercises on your local machine (or on a different server for that matter).
+I thought it would be convenient to:
+ Have access after you&rsquo;ve finished the course.
+Once you have finished the course, it would be interesting to still be able to read, run and experiment with the Notebooks from the course."/>
+<meta name="twitter:site" content="@zero2singularit"/>
+
+        <meta property="og:title" content="Run your Coursera Jupyter Notebook locally" />
+<meta property="og:description" content="While completing the Coursera Deep Learning specialization, I started to wonder whether it would be possible to run the Jupyter Notebooks from the exercises on your local machine (or on a different server for that matter).
+I thought it would be convenient to:
+ Have access after you&rsquo;ve finished the course.
+Once you have finished the course, it would be interesting to still be able to read, run and experiment with the Notebooks from the course." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/coursera-jupyter-locally/" />
+
+
+
+<meta property="article:published_time" content="2018-03-01T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-03-01T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Run your Coursera Jupyter Notebook locally">
+<meta itemprop="description" content="While completing the Coursera Deep Learning specialization, I started to wonder whether it would be possible to run the Jupyter Notebooks from the exercises on your local machine (or on a different server for that matter).
+I thought it would be convenient to:
+ Have access after you&rsquo;ve finished the course.
+Once you have finished the course, it would be interesting to still be able to read, run and experiment with the Notebooks from the course.">
+
+
+<meta itemprop="datePublished" content="2018-03-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="855">
+
+
+
+<meta itemprop="keywords" content="Deep Learning,Machine Learning," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-113144830-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/newsletter/">
+                            <i class="fa fa-envelope">&nbsp;</i>Subscribe
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/newsletter/">
+                            <h3>
+                                <i class="fa fa-envelope">&nbsp;</i>Subscribe
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/fast-ai-part-1-course-1-annotated-notes/">Fast.ai - Part 1 - Lesson 1 - Annotated notes</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-11'>
+                                    July 11, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/fast.ai-up-to-speed-with-the-best-of-deep-learning/">Fast.ai: Up to speed with the best of Deep Learning</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-06-06'>
+                                    June 6, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/9-ai-ml-podcasts-you-should-subscribe-to/">9 awesome artificial intelligence and machine learning podcasts you should subscribe to</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-03-21'>
+                                    March 21, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/downloading-datasets-introducting-pdl/">Downloading datasets - Introducting PDL - Python Download Library</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-03-15'>
+                                    March 15, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/coursera-jupyter-locally/">Run your Coursera Jupyter Notebook locally</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-03-01'>
+                                    March 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/deep-learning-resources-github-repo/">Deep Learning Resources Github Repository</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-02-28'>
+                                    February 28, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/linked-in-do-something-that-scares-you-every-day/">Do Something That Scares You, Every Day</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-02-19'>
+                                    February 19, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fcoursera-jupyter-locally%2f&amp;text=Run%20your%20Coursera%20Jupyter%20Notebook%20locally&amp;via=zero2singularit" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fcoursera-jupyter-locally%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fcoursera-jupyter-locally%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fcoursera-jupyter-locally%2f&amp;title=Run%20your%20Coursera%20Jupyter%20Notebook%20locally" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fcoursera-jupyter-locally%2f&amp;title=Run%20your%20Coursera%20Jupyter%20Notebook%20locally" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fcoursera-jupyter-locally%2f&amp;title=Run%20your%20Coursera%20Jupyter%20Notebook%20locally" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fcoursera-jupyter-locally%2f&amp;description=Run%20your%20Coursera%20Jupyter%20Notebook%20locally" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Jan%20Van%20de%20Poel&amp;body=%2fblog%2fcoursera-jupyter-locally%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/coursera-jupyter-locally/">Run your Coursera Jupyter Notebook locally</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-03-01'>
+            March 1, 2018</time>
+        <span class="author">Jan Van de Poel</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+
+<p>While completing the <a href="/blog/deep-learning-specialization-deeplearning-ai/">Coursera Deep Learning specialization</a>,  I started to wonder whether it would be possible to run the Jupyter Notebooks from the exercises on your local machine (or on a different server for that matter).</p>
+
+<p>I thought it would be convenient to:</p>
+
+<ul>
+<li><p>Have access after you&rsquo;ve finished the course.</p>
+
+<p>Once you have finished the course, it would be interesting to still be able to read, run and experiment with the Notebooks from the course. After I passed the certification, I felt I had understood the material and knew when to apply it, but it felt I would need to go back from time to time, or just dig a bit deeper later on and play with it some more to really get it down. So running the notebooks locally, would save me a lot of trouble.</p></li>
+
+<li><p>Experiment with the notebooks on different machines</p>
+
+<p>A lot of the starter material focusses on getting the basics right, and rightfully so. Understanding how the algorithms work, how you structure projects, how to prepare data are essential to getting you up and running. But there is more to getting a model in production, so I thought it would be nice to be able to run some notebooks on different environments/hardware like Azure, AWS, Paperspace, GCE, &hellip; or even my own DL machine?</p></li>
+</ul>
+
+<h1 id="my-personal-experience">My personal experience</h1>
+
+<p>Coming from a more C#-world and having limited experience running these notebooks, I was looking for a way to do this. I initially tried downloading each file manually, which turned out not the be a good idea, so I started the browsing the Deep Learning Specialization forums and found a number of students having the same issues.</p>
+
+<h1 id="writing-it-down">Writing it down</h1>
+
+<p>I found a set of different solutions spread out over the forum, so I deciced to write a comprehensive guide to how to do this.</p>
+
+<h2 id="step-1-add-a-bash-script-to-notebook">Step 1: add a bash script to notebook</h2>
+
+<p>Open a notebook and on the bottom of your notebook, insert a cell</p>
+
+<p><img src="/img/coursera-jupyter-notebook/insert-cell.png" alt="insert a cell" /></p>
+
+<p>and paste the following bash script:</p>
+
+<pre><code class="language-bash">!tar chvzf notebook.tar.gz --exclude notebook.tar.gz *
+</code></pre>
+
+<p>Which should look like this:</p>
+
+<p><img src="/img/coursera-jupyter-notebook/add-cell.png" alt="export and compress the notebook" /></p>
+
+<p>or with a cell above it (obviously the text will differ in your case):</p>
+
+<p><img src="/img/coursera-jupyter-notebook/add-cell-full.png" alt="export and compress the notebook with a visual cell above" /></p>
+
+<p>The <em>!</em> in the beginning, this tells the notebook you want to run a bash script instead of Python code.</p>
+
+<p>The <em>tar</em> command will create an archive <em>notebook.tar.gz</em> with all files in the current folder (including subfolders) and compress it to a single archive.</p>
+
+<p>The <em><code>--</code>exclude</em> flag will make sure our notebook.tar.gz file is never included in the archive.</p>
+
+<h2 id="step-2-run-the-cell">Step 2: Run the cell</h2>
+
+<p>Run the cell you added in <a href="#step-1:-add-bash-script-to-notebook">Step 1</a> (Shift+Enter) to export and compress the notebook. This might take some time and while the operation is still running, the cell will look like this (note the <em>aterisk at the beginning</em>):</p>
+
+<p><img src="/img/coursera-jupyter-notebook/run-cell.png" alt="running a Jupyter cell" /></p>
+
+<p>Once the export is done, you will see a similar output to the one below. The output will obviously depend on the content of what is being exported and compressed:</p>
+
+<p><img src="/img/coursera-jupyter-notebook/output-cell-2.png" alt="finished export" /></p>
+
+<h3 id="error-note">Error note:</h3>
+
+<p>On some notebooks, I got an error: File /models/camarche.h5 removed before we could read it. I&rsquo;m not sure as to why this error occured, but so far I did not encounter any problems related to it while running the notebooks.</p>
+
+<h2 id="step-3-download-the-archive">Step 3: Download the archive</h2>
+
+<p>To download the archive, you need to open the Jupyter folder from the menu:</p>
+
+<p><img src="/img/coursera-jupyter-notebook/open-folder.png" alt="open the Jupyter folder" /></p>
+
+<p>Select the &ldquo;notebook.tar.gz&rdquo; file and click the download button and store the file locally:</p>
+
+<p><img src="/img/coursera-jupyter-notebook/download-tar-gz.png" alt="Jupyter folder overview" /></p>
+
+<h2 id="step-4-delete-the-archive-from-the-coursera-server">Step 4: Delete the archive from the Coursera server</h2>
+
+<p>The solutions often contain significant amounts of data like images, pre-trained models,&hellip; So once you downloaded the archive, it is best you delete it using the red download button, all while the archive is still selected:</p>
+
+<p><img src="/img/coursera-jupyter-notebook/delete-tar-gz.png" alt="Delete archive" /></p>
+
+<h2 id="step-5-extract-the-archive">Step 5: Extract the archive</h2>
+
+<p>On your local machine (or server) extract the archive using your favorite unzipping/untarring tool or run the following script on your command line:</p>
+
+<pre><code class="language-bash">tar xvzf notebook.tar.gz
+</code></pre>
+
+<h2 id="step-6-optional-only-once-install-jupyter">Step 6: (Optional + only once) Install Jupyter</h2>
+
+<p>To run any Jupyter Notebook, you will need to install Jupyter. The easiest way to do this is by installing Anaconda: <a href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a></p>
+
+<p>and running the script below from your cmd:</p>
+
+<pre><code class="language-bash">conda install jupyter tensorflow
+</code></pre>
+
+<p>If you just want to install Jupyter, the installation is very well documented here:</p>
+
+<p><a href="http://jupyter.readthedocs.io/en/latest/install.html">Jupyter Installation</a>.</p>
+
+<p><em>Note:</em> The Coursera Notebooks need Python v3.</p>
+
+<h2 id="step-7-run-the-notebook-on-your-machine">Step 7: Run the notebook on your machine</h2>
+
+<p>Once you have completed the previous steps, you can run the notebook from its folder on the command line using the following command:</p>
+
+<pre><code class="language-bash">cd DIRECTORY_THAT_CONTAINS_THE_NOTEBOOK # *.ipynb file
+jupyter notebook
+</code></pre>
+
+<p>and a browser session should appear.</p>
+
+<p><em>Note:</em> You can run the notebooks on any pc, but it is highly recommended to have a good NVidea GPU for training in order to finish the training in a reasonable timeframe.</p>
+
+<h1 id="thanks">Thanks</h1>
+
+<p>I would like to thank both the mentors as well as the students of the Coursera Deep Learning specialization for the support on this and other topics. For this article, Paul T Mielke was of special help.</p>
+
+<h1 id="feedback-and-improvements">Feedback and improvements</h1>
+
+<p>I hope you enjoy the article and would love to hear from you. If you have questions or find errors on the page, please do let me know: <a href="https://twitter.com/zero2singularit">@zerotosingularity</a>.</p>
+
+<p>Enjoy!</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/blog">Blog</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/jupyter">Jupyter</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/tutorial">Tutorial</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/deep-learning">Deep Learning</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/machine-learning">Machine Learning</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/deep-learning-resources-github-repo/"
+                class="button big previous">Deep Learning Resources Github Repository</a></li>
+    
+
+    
+        <li><a href="/blog/downloading-datasets-introducting-pdl/"
+                class="button big next">Downloading datasets - Introducting PDL - Python Download Library</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/logo.png" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>Practical deep learning</h2>
+        <p></p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/zerotosingularity" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/zerotosingularity" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/zero2singularit" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/fast-ai-part-1-course-1-annotated-notes/">Fast.ai - Part 1 - Lesson 1 - Annotated notes</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-11'>
+                July 11, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/fast.ai-up-to-speed-with-the-best-of-deep-learning/">Fast.ai: Up to speed with the best of Deep Learning</a>
+              </h3>
+              
+              <time class="published" datetime='2018-06-06'>
+                June 6, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/9-ai-ml-podcasts-you-should-subscribe-to/">9 awesome artificial intelligence and machine learning podcasts you should subscribe to</a>
+              </h3>
+              
+              <time class="published" datetime='2018-03-21'>
+                March 21, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/downloading-datasets-introducting-pdl/">Downloading datasets - Introducting PDL - Python Download Library</a>
+              </h3>
+              
+              <time class="published" datetime='2018-03-15'>
+                March 15, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/coursera-jupyter-locally/">Run your Coursera Jupyter Notebook locally</a>
+              </h3>
+              
+              <time class="published" datetime='2018-03-01'>
+                March 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/deep-learning-resources-github-repo/">Deep Learning Resources Github Repository</a>
+              </h3>
+              
+              <time class="published" datetime='2018-02-28'>
+                February 28, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/linked-in-do-something-that-scares-you-every-day/">Do Something That Scares You, Every Day</a>
+              </h3>
+              
+              <time class="published" datetime='2018-02-19'>
+                February 19, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/blog/">Blog</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/intro/">Intro</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/review/">Review</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutorial/">Tutorial</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fast.ai/">fast.ai</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/github/">Github</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/jupyter/">Jupyter</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/newsletter/">Newsletter</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/notes/">Notes</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/resources/">Resources</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/podcasts/">podcasts</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>At Zero to Singularity my path literally starts at zero. Having some but limited knowledge of deep learning at the start, I head down the rabbit hole with a goal to reach the other side. And I want you to join me.</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/zerotosingularity" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/zerotosingularity" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/zero2singularit" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Zero to Singularity
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

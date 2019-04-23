@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head profile="http://gmpg.org/xfn/11
+              http://purl.org/uF/2008/03/
+              http://purl.org/uF/hAtom/0.1/">
+<meta http-equiv="Content-Type" content="text/html UTF-8"/>
+<title>Use your conda environment in Jupyter Notebooks | 2x1=10</title>
+<link rel="stylesheet" href="https://dev.widemeadows.de/wp-content/themes/reboot/reset.css" type="text/css"/>
+<link rel="stylesheet" href="https://dev.widemeadows.de/wp-content/themes/reboot/style.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="https://dev.widemeadows.de/wp-content/themes/reboot/style.css" type="text/css" media="print"/>
+<link rel="pingback" href="https://dev.widemeadows.de/xmlrpc.php"/>
+<link rel="shortcut icon" href="https://dev.widemeadows.de/wp-content/themes/reboot/images/favicon-code.ico"/>
+<link rel="alternate" type="application/rss+xml" title="2x1=10 RSS Feed" href="https://dev.widemeadows.de/feed/"/>
+<link rel="alternate" type="application/atom+xml" title="2x1=10 Atom Feed" href="https://dev.widemeadows.de/feed/atom/"/>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[latex\\]","\\[/latex\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<meta property="abt:author" content="Markus|Mayer"/>
+<meta name="keywords" content="anaconda,jupyter,python"/>
+<link rel="canonical" href="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/"/>
+<link rel='dns-prefetch' href='//dev.widemeadows.de'/>
+<link rel='dns-prefetch' href='//s0.wp.com'/>
+<link rel='dns-prefetch' href='//secure.gravatar.com'/>
+<link rel='dns-prefetch' href='//s.w.org'/>
+<link rel="alternate" type="application/rss+xml" title="2x1=10 &raquo; Use your conda environment in Jupyter Notebooks Kommentar-Feed" href="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/feed/"/>
+<script type="text/javascript">window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/dev.widemeadows.de\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.9"}};!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);</script>
+<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+<link rel='stylesheet' id='abt-frontend-styles-css' href='https://dev.widemeadows.de/wp-content/plugins/academic-bloggers-toolkit/css/frontend.css?ver=4.13.3' type='text/css' media='all'/>
+<link rel='stylesheet' id='jetpack_css-css' href='https://dev.widemeadows.de/wp-content/plugins/jetpack/css/jetpack.css?ver=5.8' type='text/css' media='all'/>
+<link rel='stylesheet' id='pagination-fu-css' href='https://dev.widemeadows.de/wp-content/plugins/pagination-fu/pagination-fu.css?ver=1.0' type='text/css' media='screen'/>
+<script>if(document.location.protocol!="https:"){document.location=document.URL.replace(/^http:/i,"https:");}</script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/themes/reboot/js/jquery-2.2.4.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/timeago/jquery.timeago.js?ver=4.9.9'></script>
+<link rel='https://api.w.org/' href='https://dev.widemeadows.de/wp-json/'/>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dev.widemeadows.de/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://dev.widemeadows.de/wp-includes/wlwmanifest.xml"/>
+<link rel='prev' title='Building OpenCV for Anaconda Python 3' href='https://dev.widemeadows.de/2017/08/23/building-opencv-for-anaconda-python-3/'/>
+<link rel='next' title='Summarized: The E-Dimension — Why Machine Learning Doesn’t Work Well for Some Problems?' href='https://dev.widemeadows.de/2018/03/04/the-e-dimension-emergence-as-a-barrier-to-predictive-inference/'/>
+<meta name="generator" content="WordPress 4.9.9"/>
+<link rel='shortlink' href='https://wp.me/p1Z4n0-t6'/>
+<link rel="alternate" type="application/json+oembed" href="https://dev.widemeadows.de/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdev.widemeadows.de%2F2017%2F08%2F23%2Fuse-your-conda-environment-in-jupyter-notebooks%2F"/>
+<link rel="alternate" type="text/xml+oembed" href="https://dev.widemeadows.de/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdev.widemeadows.de%2F2017%2F08%2F23%2Fuse-your-conda-environment-in-jupyter-notebooks%2F&#038;format=xml"/>
+<meta property="og:title" name="og:title" content="Use your conda environment in Jupyter Notebooks"/>
+<meta property="og:type" name="og:type" content="article"/>
+<meta property="og:image" name="og:image" content="https://dev.widemeadows.de/files/2017/08/nb_conda.png"/>
+<meta property="og:url" name="og:url" content="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/"/>
+<meta property="og:description" name="og:description" content="Sadly, running jupyter notebook from within a conda environment does not imply your notebook also runs in the same environment. Thankfully, there&#039;s an easy fix for that, namely nb_conda, and you&#039;ll get it using in the environment of your choice. After that, start up your notebook and select the Kernel you want either when creating [...]"/>
+<meta property="og:locale" name="og:locale" content="de_DE"/>
+<meta property="og:site_name" name="og:site_name" content="2x1=10"/>
+<meta property="twitter:card" name="twitter:card" content="summary_large_image"/>
+<meta property="article:tag" name="article:tag" content="Anaconda"/>
+<meta property="article:tag" name="article:tag" content="Jupyter"/>
+<meta property="article:tag" name="article:tag" content="Python"/>
+<meta property="article:section" name="article:section" content="Data Science"/>
+<meta property="article:published_time" name="article:published_time" content="2017-08-23T21:33:34+00:00"/>
+<meta property="article:modified_time" name="article:modified_time" content="2017-08-23T21:34:16+00:00"/>
+<meta property="article:author" name="article:author" content="https://dev.widemeadows.de/author/admin/"/>
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel="trackback" href="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/trackback/" title="Trackback-URL für 'Use your conda environment in Jupyter Notebooks'"/>
+<style type="text/css">.recentcomments a{display:inline!important;padding:0!important;margin:0!important}</style>
+<style type="text/css">*{text-rendering:optimizeLegibility}sup{vertical-align:60%;font-size:75%;line-height:100%}sub{vertical-align:-10%;font-size:75%;line-height:100%}.amp{font-family: Baskerville, &quot;Goudy Old Style&quot;, &quot;Palatino&quot;, &quot;Book Antiqua&quot;, &quot;Warnock Pro&quot;, serif;font-weight:normal;font-style:italic;font-size:1.1em;line-height:1em}.caps{font-size:90%}.dquo{margin-left:-.40em}.quo{margin-left:-.2em}</style>
+<style type="text/css">body{-webkit-font-feature-settings:"liga";font-feature-settings:"liga";-ms-font-feature-settings:normal}</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="stylesheet" href="https://dev.widemeadows.de/wp-content/plugins/timeago/timeago.css" type="text/css"/>
+<style type="text/css" id="wp-custom-css">img.screenshot{-moz-border-radius:0!important;-webkit-border-radius:0!important;-moz-transform:rotate(0deg)!important;-o-transform:rotate(0deg)!important;-webkit-transform:rotate(0deg)!important;filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0) !important;-ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0) !important}</style>
+<script type="text/javascript" language="javascript">jQuery(document).ready(function($){$('a[href*=\\#]').click(function(){if(location.pathname.replace(/^\//,'')==this.pathname.replace(/^\//,'')&&location.hostname==this.hostname){var $target=$(this.hash);$target=$target.length&&$target||$('[name='+this.hash.slice(1)+']');if($target.length){var targetOffset=$target.offset().top;$('html,body').animate({scrollTop:targetOffset},1000);return false;}}});});</script>
+<link rel="dns-prefetch" href="//stats.wp.com"></head>
+<body data-rsssl=1 lang="de-DE" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<a id="top" name="top"></a>
+<a rel="nofollow" href="https://dev.widemeadows.de/pushover.php"></a>
+<div id="page" class="single">
+<div id="header" role="banner">
+<div class="transparency"></div>
+<div class="title"><a href="https://dev.widemeadows.de" rel="home"><h1>2x1=10</h1></a></div>
+<div class="description">because numbers are people, too</div>
+<div id="mainnavigation" class="menubar" role="navigation">
+<a class="mainnavlink" id="navtopersonal" rel="me bookmark" href="https://blog.widemeadows.de" title="unlesbar"><div>Persönliches</div></a>
+<a class="mainnavlink" id="navtophoto" rel="me bookmark" href="https://photo.widemeadows.de" title="unsichtbar"><div>Fotografie</div></a>
+<a class="mainnavlink currenttopic" id="navtocode" rel="me bookmark" href="https://dev.widemeadows.de" title="2x1=10"><div>Programmierung</div></a>
+</div>
+</div>
+<div class="separate"></div>
+<div id="header-sidebar" class="sidebar"><ul class="sidebar"></ul></div>
+<div id="content" class="narrowcolumn" role="main">
+<ul class="posts hfeed">
+<li id="post-1804" class="entry post-1804 post type-post status-publish format-standard hentry category-data-science tag-anaconda tag-jupyter tag-python">
+<h2 class="title">
+<a id="p1804" name="p1804" class="title entry-title" href="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/" rel="bookmark" title="">
+<span>Use your conda environment in Jupyter Notebooks</span>
+</a>
+</h2>
+<div class="entry-content">
+<p>Sad­ly, run­ning <c>jupyter note­book</c> from with­in a con­da envi­ron­ment does not imply your note­book also runs in the same envi­ron­ment. Thank­ful­ly, there’s an easy fix for that, name­ly <a href="https://github.com/Anaconda-Platform/nb_conda">nb_conda</a>, and you’ll get it using</p>
+<pre class="brush: bash; title: ; notranslate" title>
+conda install nb_conda
+</pre>
+<p>in the envi­ron­ment of your choice. After that, start up your note­book and select the Ker­nel you want either when cre­at­ing a new note­book or from the notebook’s Ker­nel menu:</p>
+<p><img src="https://dev.widemeadows.de/wp-content/plugins/jetpack/modules/lazy-images/images/1x1.trans.gif" alt class="screenshot aligncenter size-full wp-image-1805" data-lazy-src="https://dev.widemeadows.de/files/2017/08/nb_conda.png" data-lazy-srcset="https://dev.widemeadows.de/files/2017/08/nb_conda.png 594w, https://dev.widemeadows.de/files/2017/08/nb_conda-300x141.png 300w" data-lazy-sizes="(max-width: 594px) 100vw, 594px"><noscript><img src="https://dev.widemeadows.de/files/2017/08/nb_conda.png" alt class="screenshot aligncenter size-full wp-image-1805" srcset="https://dev.widemeadows.de/files/2017/08/nb_conda.png 594w, https://dev.widemeadows.de/files/2017/08/nb_conda-300x141.png 300w" sizes="(max-width: 594px) 100vw, 594px"></noscript></p>
+<p>There we go.</p>
+</div>
+<div class="info post-info" role="contentinfo">
+<abbr class='timeago' title='2017-08-23 19:33:34Z'>August 23rd, 2017 GMT +1</abbr> von
+<address class="author vcard">
+<span class="fn n value-title" title="Markus Mayer">
+Markus
+<span class="nickname value-title" title="sunside"></span>
+<a class="url" href="http://widemeadows.de"></a>
+</span>
+</address>
+<span class="timestamps hidden">
+<span class="created"><span class="value">2017-08-23T21:33:34+01:00</span></span>
+<span class="updated"><span class="value">2017-08-23T21:34:16+01:00</span></span>
+</span>
+&#183; <span class="commentlink"><a href="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/#comments" class="comment">1 Kommentar</a></span>
+</div>
+<div class="postmetadata" role="contentinfo">
+<a rel="nofollow" href="https://dev.widemeadows.de/pushover.php"><div style="height: 0px; width: 0px;"></div></a>
+<div class="tags" role="navigation">
+<a rel="tag" class="tag tag-102 tag-python" href="https://dev.widemeadows.de/tag/python/" title="Python">Python</a>
+<a rel="tag" class="tag tag-110 tag-anaconda" href="https://dev.widemeadows.de/tag/anaconda/" title="Anaconda">Anaconda</a>
+<a rel="tag" class="tag tag-109 tag-jupyter lonely" href="https://dev.widemeadows.de/tag/jupyter/" title="Jupyter">Jupyter</a>
+</div>
+<div class="categories" role="navigation">
+<a rel="category tag index" class="category category-108 category-data-science{if $category.count == 1} lonely{/if}" href="https://dev.widemeadows.de/category/data-science/" title="Data Science">Data Science</a>
+</div>
+</div>
+<div class="comments">
+<h3 id="comments">1 Kommentar auf &#8222;Use your conda environment in Jupyter Notebooks&#8220;</h3>
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="comment-65073">
+<div id="div-comment-65073" class="comment-body">
+<div class="comment-author vcard">
+<img alt src="https://dev.widemeadows.de/wp-content/plugins/jetpack/modules/lazy-images/images/1x1.trans.gif" class="avatar avatar-32 photo" height="32" width="32" data-lazy-src="https://secure.gravatar.com/avatar/8936ca940401fd9ce0bb00cde7653fbf?s=32&#038;d=mm&#038;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/8936ca940401fd9ce0bb00cde7653fbf?s=64&#038;d=mm&#038;r=g 2x"><noscript><img alt='' src='https://secure.gravatar.com/avatar/8936ca940401fd9ce0bb00cde7653fbf?s=32&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/8936ca940401fd9ce0bb00cde7653fbf?s=64&#038;d=mm&#038;r=g 2x' class='avatar avatar-32 photo' height='32' width='32'/></noscript>	<cite class="fn">Vaibhav</cite> <span class="says">sagt:</span>	</div>
+<div class="comment-meta commentmetadata"><a href="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/#comment-65073">
+<abbr class='timeago' title='2018-06-28 14:33:24Z'>Donnerstag, Juni 28th, 2018 04:33 pm GMT +1</abbr> um 16:33&nbsp;Uhr</a>	</div>
+<p>Easy fix. Thanks</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/?replytocom=65073#respond' onclick='return addComment.moveForm( "div-comment-65073", "65073", "respond", "1804" )' aria-label='Antworte auf Vaibhav'>Antworten</a></div>
+</div>
+</li>
+</ol>
+<div id="respond" class="anon-user">
+<h3>Hinterlasse einen Kommentar</h3>
+<div class="cancel-comment-reply">
+<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/#respond" style="display:none;">Hier klicken, um das Antworten abzubrechen.</a></small>
+</div>
+<form action="https://dev.widemeadows.de/wp-comments-post.php" method="post" id="commentform">
+<script language="javascript" type="text/javascript">function rebootFocus(idElement){document.getElementById(idElement).setAttribute("class","focused");}function rebootUnfocus(idElement){document.getElementById(idElement).setAttribute("class","unfocused");}</script>
+<div class="comment-row commenttext">
+<label id="comment-label" for="comment">Dein Kommentar:</label>
+<textarea onFocus="javascript:rebootFocus('comment-label');" onBlur="javascript:rebootUnfocus('comment-label');" tabindex="1" name="comment" id="comment" class="commenttext required" cols="58" rows="10" tabindex="1" aria-required="true"></textarea>
+</div>
+<div class="author-row new-comment-author-info">
+<label id="author-label" for="author">Name <span class="required-note">(ben&#246;tigt)</span></label>
+<input onFocus="javascript:rebootFocus('author-label');" onBlur="javascript:rebootUnfocus('author-label');" tabindex="2" class="author required" type="text" name="author" id="author" value="" size="22" tabindex="2" aria-required="true"/>
+</div>
+<div class="email-row new-comment-author-info">
+<label id="email-label" for="email">Mail <span class="not-published-note">(geheim)</span> <span class="required-note">(ben&#246;tigt)</span></label>
+<input onFocus="javascript:rebootFocus('email-label');" onBlur="javascript:rebootUnfocus('email-label');" tabindex="3" class="email required" type="text" name="email" id="email" value="" size="22" tabindex="3" aria-required="true"/>
+</div>
+<div class="url-row new-comment-author-info">
+<label id="url-label" for="url">Website</label>
+<input onFocus="javascript:rebootFocus('url-label');" onBlur="javascript:rebootUnfocus('url-label');" tabindex="4" class="url" type="text" name="url" id="url" value="" size="22" tabindex="4"/>
+</div>
+<div class="subscription-row">
+<p class="subscribe-to-doi-comments">
+<label for="subscribe"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"/> Benachrichtige mich über nachfolgende Kommentare per E-Mail.</label>
+</p>
+</div>	<div class="button-row"><input tabindex="10" name="submit" type="submit" id="submit" tabindex="5" value="Kommentar absenden"/>
+<input type='hidden' name='comment_post_ID' value='1804' id='comment_post_ID'/>
+<input type='hidden' name='comment_parent' id='comment_parent' value='0'/>
+</div>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="470a4a46d3"/></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Benachrichtige mich über neue Beiträge via E-Mail.</label></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="134"/></p>
+</form>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<a id="bottom" name="bottom"></a>
+<div class="separate lighter"></div>
+<div class="pagination" role="navigation">
+<div class="pagination-fu" role="navigation"><ol class="pagination-fu"><li><a class="page-1 prev" rel="prev prefetch" href="https://dev.widemeadows.de/2018/03/04/the-e-dimension-emergence-as-a-barrier-to-predictive-inference/" title="Summarized: The E-Dimension — Why Machine Learning Doesn’t Work Well for Some Problems?">&#171;&#160;newer</a></li><li><a class="page-1 page" href="https://dev.widemeadows.de/2018/03/04/the-e-dimension-emergence-as-a-barrier-to-predictive-inference/" title="Summarized: The E-Dimension — Why Machine Learning Doesn’t Work Well for Some Problems?" rel="first prev prefetch">1</a></li><li><a class="page-2 page current backlink linktoindex" href="https://dev.widemeadows.de/?paged=1" title="Back to index (page 1)">2</a></li><li><a class="page-3 page" href="https://dev.widemeadows.de/2017/08/23/building-opencv-for-anaconda-python-3/" title="Building OpenCV for Anaconda Python 3" rel="next prefetch">3</a></li><li><a class="page-4 page" href="https://dev.widemeadows.de/2017/01/21/using-tensorflows-supervisor-with-tensorboard-summary-groups/" title="Using TensorFlow’s Supervisor with TensorBoard summary groups">4</a></li><li><a class="page-5 page" href="https://dev.widemeadows.de/2016/12/12/getting-an-image-into-and-out-of-tensorflow/" title="Getting an image into and out of TensorFlow">5</a></li><li><a class="page-6 page" href="https://dev.widemeadows.de/2016/09/14/dockerized-net-core-1-0-1-and-net-framework-on-mono-4-7/" title="Dockerized .NET Core 1.0.1 and .NET Framework on Mono 4.7">6</a></li><li><a class="page-7 page" href="https://dev.widemeadows.de/2016/09/01/building-caffe-on-windows-using-visual-studio-201-3/" title="Building Caffe on Windows using Visual Studio 201…3">7</a></li><li><a class="page-8 page" href="https://dev.widemeadows.de/2015/12/10/rust-adding-arbitrary-things/" title="Rust: adding arbitrary things">8</a></li><li><a class="page-9 page" href="https://dev.widemeadows.de/2015/12/04/compiler-crashed-with-code-1-on-mono/" title="<span class=" dquo">“</span>Compiler crashed with code 1” on Mono">9</a></li><li><span class="gap">&#133;</span></li><li><a class="page-43 page" href="https://dev.widemeadows.de/2011/04/02/git-fur-svn-umsteiger/" title="Git für SVN-Umsteiger" rel="last">43</a></li><li><a class="page-3 next" rel="next prefetch" href="https://dev.widemeadows.de/2017/08/23/building-opencv-for-anaconda-python-3/" title="Building OpenCV for Anaconda Python 3">older&#160;&#187;</a></li></ol></div>
+</div>
+<div class="separate"></div>
+<div id="footer">
+<div id="footer-head"></div>
+<div id="footer-left" class="sidebar">
+<ul class="sidebar">
+<li id="media_image-3" class="widget widget_media_image"><img width="128" height="128" src="https://dev.widemeadows.de/wp-content/plugins/jetpack/modules/lazy-images/images/1x1.trans.gif" class="image wp-image-562 alignleft attachment-full size-full" alt="" style="max-width: 100%; height: auto;" title="Your Host" data-lazy-src="https://dev.widemeadows.de/files/2014/02/Untitled-2-copy-128sq.jpg"/></li><li id="categories-3" class="widget widget_categories"><h2 class="widgettitle">Kategorien</h2>	<ul>
+<li class="cat-item cat-item-31"><a href="https://dev.widemeadows.de/category/dotnet/">.NET</a>
+<ul class='children'>
+<li class="cat-item cat-item-84"><a href="https://dev.widemeadows.de/category/dotnet/asp-net/">ASP.NET</a>
+</li>
+<li class="cat-item cat-item-99"><a href="https://dev.widemeadows.de/category/dotnet/core/">Core</a>
+</li>
+<li class="cat-item cat-item-85"><a href="https://dev.widemeadows.de/category/dotnet/dnx/">DNX</a>
+</li>
+</ul>
+</li>
+<li class="cat-item cat-item-1"><a href="https://dev.widemeadows.de/category/allgemein/">Allgemein</a>
+</li>
+<li class="cat-item cat-item-7"><a href="https://dev.widemeadows.de/category/android/">Android</a>
+</li>
+<li class="cat-item cat-item-108"><a href="https://dev.widemeadows.de/category/data-science/">Data Science</a>
+</li>
+<li class="cat-item cat-item-64"><a href="https://dev.widemeadows.de/category/embedded/">Embedded</a>
+</li>
+<li class="cat-item cat-item-36"><a href="https://dev.widemeadows.de/category/fpga/">FPGA</a>
+</li>
+<li class="cat-item cat-item-78"><a href="https://dev.widemeadows.de/category/humor/">Humor</a>
+</li>
+<li class="cat-item cat-item-12"><a href="https://dev.widemeadows.de/category/image-processing/">Image Processing</a>
+</li>
+<li class="cat-item cat-item-22"><a href="https://dev.widemeadows.de/category/kalman-filter/">Kalman Filter</a>
+</li>
+<li class="cat-item cat-item-59"><a href="https://dev.widemeadows.de/category/machine-learning/">Machine Learning</a>
+<ul class='children'>
+<li class="cat-item cat-item-103"><a href="https://dev.widemeadows.de/category/machine-learning/caffe/">Caffe</a>
+</li>
+<li class="cat-item cat-item-60"><a href="https://dev.widemeadows.de/category/machine-learning/hidden-markov-models/">Hidden Markov Models</a>
+</li>
+<li class="cat-item cat-item-111"><a href="https://dev.widemeadows.de/category/machine-learning/ml-summarized/" title="Summaries of papers and blog posts on machine learning and predictive inference topics.">ML Summarized</a>
+</li>
+<li class="cat-item cat-item-83"><a href="https://dev.widemeadows.de/category/machine-learning/neural-networks/">Neural Networks</a>
+</li>
+<li class="cat-item cat-item-100"><a href="https://dev.widemeadows.de/category/machine-learning/tensorflow/">TensorFlow</a>
+</li>
+</ul>
+</li>
+<li class="cat-item cat-item-48"><a href="https://dev.widemeadows.de/category/mapping/">Mapping</a>
+</li>
+<li class="cat-item cat-item-24"><a href="https://dev.widemeadows.de/category/matlab/">MATLAB</a>
+</li>
+<li class="cat-item cat-item-20"><a href="https://dev.widemeadows.de/category/robotik/">Robotik</a>
+</li>
+<li class="cat-item cat-item-91"><a href="https://dev.widemeadows.de/category/rust/">Rust</a>
+</li>
+<li class="cat-item cat-item-23"><a href="https://dev.widemeadows.de/category/signal-processing/">Signal Processing</a>
+</li>
+<li class="cat-item cat-item-44"><a href="https://dev.widemeadows.de/category/tutorial/">Tutorial</a>
+</li>
+<li class="cat-item cat-item-3"><a href="https://dev.widemeadows.de/category/scm/" title="Beiträge über Versionskontrollsysteme (VCS, DVCS, SCM) wie Git, Bazaar, Subversion ...">Version Control</a>
+</li>
+</ul>
+</li>	<li id="recent-posts-3" class="widget widget_recent_entries">	<h2 class="widgettitle">Neueste Beiträge</h2>	<ul>
+<li>
+<a href="https://dev.widemeadows.de/2018/03/04/the-e-dimension-emergence-as-a-barrier-to-predictive-inference/">Summarized: The E-Dimension — Why Machine Learning Doesn’t Work Well for Some Problems?</a>
+</li>
+<li>
+<a href="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/">Use your conda environment in Jupyter Notebooks</a>
+</li>
+<li>
+<a href="https://dev.widemeadows.de/2017/08/23/building-opencv-for-anaconda-python-3/">Building OpenCV for Anaconda Python 3</a>
+</li>
+<li>
+<a href="https://dev.widemeadows.de/2017/01/21/using-tensorflows-supervisor-with-tensorboard-summary-groups/">Using TensorFlow’s Supervisor with TensorBoard summary groups</a>
+</li>
+<li>
+<a href="https://dev.widemeadows.de/2016/12/12/getting-an-image-into-and-out-of-tensorflow/">Getting an image into and out of TensorFlow</a>
+</li>
+</ul>
+</li> </ul>
+</div>
+<div id="footer-center" class="sidebar">
+<ul class="sidebar">
+<li id="tag_cloud-4" class="widget widget_tag_cloud"><h2 class="widgettitle">Kategorien</h2><div class="tagcloud"><a href="https://dev.widemeadows.de/category/dotnet/" class="tag-cloud-link tag-link-31 tag-link-position-1" style="font-size: 16pt;" aria-label=".NET (4 Einträge)">.NET</a>
+<a href="https://dev.widemeadows.de/category/allgemein/" class="tag-cloud-link tag-link-1 tag-link-position-2" style="font-size: 14pt;" aria-label="Allgemein (3 Einträge)">Allgemein</a>
+<a href="https://dev.widemeadows.de/category/android/" class="tag-cloud-link tag-link-7 tag-link-position-3" style="font-size: 11.6pt;" aria-label="Android (2 Einträge)">Android</a>
+<a href="https://dev.widemeadows.de/category/dotnet/asp-net/" class="tag-cloud-link tag-link-84 tag-link-position-4" style="font-size: 11.6pt;" aria-label="ASP.NET (2 Einträge)">ASP.NET</a>
+<a href="https://dev.widemeadows.de/category/machine-learning/caffe/" class="tag-cloud-link tag-link-103 tag-link-position-5" style="font-size: 11.6pt;" aria-label="Caffe (2 Einträge)">Caffe</a>
+<a href="https://dev.widemeadows.de/category/dotnet/core/" class="tag-cloud-link tag-link-99 tag-link-position-6" style="font-size: 8pt;" aria-label="Core (1 Eintrag)">Core</a>
+<a href="https://dev.widemeadows.de/category/data-science/" class="tag-cloud-link tag-link-108 tag-link-position-7" style="font-size: 19pt;" aria-label="Data Science (6 Einträge)">Data Science</a>
+<a href="https://dev.widemeadows.de/category/dotnet/dnx/" class="tag-cloud-link tag-link-85 tag-link-position-8" style="font-size: 11.6pt;" aria-label="DNX (2 Einträge)">DNX</a>
+<a href="https://dev.widemeadows.de/category/embedded/" class="tag-cloud-link tag-link-64 tag-link-position-9" style="font-size: 11.6pt;" aria-label="Embedded (2 Einträge)">Embedded</a>
+<a href="https://dev.widemeadows.de/category/fpga/" class="tag-cloud-link tag-link-36 tag-link-position-10" style="font-size: 17.6pt;" aria-label="FPGA (5 Einträge)">FPGA</a>
+<a href="https://dev.widemeadows.de/category/machine-learning/hidden-markov-models/" class="tag-cloud-link tag-link-60 tag-link-position-11" style="font-size: 8pt;" aria-label="Hidden Markov Models (1 Eintrag)">Hidden Markov Models</a>
+<a href="https://dev.widemeadows.de/category/humor/" class="tag-cloud-link tag-link-78 tag-link-position-12" style="font-size: 11.6pt;" aria-label="Humor (2 Einträge)">Humor</a>
+<a href="https://dev.widemeadows.de/category/image-processing/" class="tag-cloud-link tag-link-12 tag-link-position-13" style="font-size: 14pt;" aria-label="Image Processing (3 Einträge)">Image Processing</a>
+<a href="https://dev.widemeadows.de/category/kalman-filter/" class="tag-cloud-link tag-link-22 tag-link-position-14" style="font-size: 14pt;" aria-label="Kalman Filter (3 Einträge)">Kalman Filter</a>
+<a href="https://dev.widemeadows.de/category/machine-learning/" class="tag-cloud-link tag-link-59 tag-link-position-15" style="font-size: 16pt;" aria-label="Machine Learning (4 Einträge)">Machine Learning</a>
+<a href="https://dev.widemeadows.de/category/mapping/" class="tag-cloud-link tag-link-48 tag-link-position-16" style="font-size: 11.6pt;" aria-label="Mapping (2 Einträge)">Mapping</a>
+<a href="https://dev.widemeadows.de/category/matlab/" class="tag-cloud-link tag-link-24 tag-link-position-17" style="font-size: 22pt;" aria-label="MATLAB (9 Einträge)">MATLAB</a>
+<a href="https://dev.widemeadows.de/category/machine-learning/ml-summarized/" class="tag-cloud-link tag-link-111 tag-link-position-18" style="font-size: 8pt;" aria-label="ML Summarized (1 Eintrag)">ML Summarized</a>
+<a href="https://dev.widemeadows.de/category/machine-learning/neural-networks/" class="tag-cloud-link tag-link-83 tag-link-position-19" style="font-size: 11.6pt;" aria-label="Neural Networks (2 Einträge)">Neural Networks</a>
+<a href="https://dev.widemeadows.de/category/robotik/" class="tag-cloud-link tag-link-20 tag-link-position-20" style="font-size: 11.6pt;" aria-label="Robotik (2 Einträge)">Robotik</a>
+<a href="https://dev.widemeadows.de/category/rust/" class="tag-cloud-link tag-link-91 tag-link-position-21" style="font-size: 8pt;" aria-label="Rust (1 Eintrag)">Rust</a>
+<a href="https://dev.widemeadows.de/category/signal-processing/" class="tag-cloud-link tag-link-23 tag-link-position-22" style="font-size: 16pt;" aria-label="Signal Processing (4 Einträge)">Signal Processing</a>
+<a href="https://dev.widemeadows.de/category/machine-learning/tensorflow/" class="tag-cloud-link tag-link-100 tag-link-position-23" style="font-size: 11.6pt;" aria-label="TensorFlow (2 Einträge)">TensorFlow</a>
+<a href="https://dev.widemeadows.de/category/tutorial/" class="tag-cloud-link tag-link-44 tag-link-position-24" style="font-size: 11.6pt;" aria-label="Tutorial (2 Einträge)">Tutorial</a>
+<a href="https://dev.widemeadows.de/category/scm/" class="tag-cloud-link tag-link-3 tag-link-position-25" style="font-size: 17.6pt;" aria-label="Version Control (5 Einträge)">Version Control</a></div>
+</li>
+<li id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widgettitle">Tags</h2><div class="tagcloud"><a href="https://dev.widemeadows.de/tag/dotnet/" class="tag-cloud-link tag-link-93 tag-link-position-1" style="font-size: 12.581818181818pt;" aria-label=".NET (2 Einträge)">.NET</a>
+<a href="https://dev.widemeadows.de/tag/accelerometer/" class="tag-cloud-link tag-link-27 tag-link-position-2" style="font-size: 12.581818181818pt;" aria-label="Accelerometer (2 Einträge)">Accelerometer</a>
+<a href="https://dev.widemeadows.de/tag/anaconda/" class="tag-cloud-link tag-link-110 tag-link-position-3" style="font-size: 12.581818181818pt;" aria-label="Anaconda (2 Einträge)">Anaconda</a>
+<a href="https://dev.widemeadows.de/tag/bitmap/" class="tag-cloud-link tag-link-10 tag-link-position-4" style="font-size: 8pt;" aria-label="Bitmap (1 Eintrag)">Bitmap</a>
+<a href="https://dev.widemeadows.de/tag/bug/" class="tag-cloud-link tag-link-42 tag-link-position-5" style="font-size: 12.581818181818pt;" aria-label="Bug (2 Einträge)">Bug</a>
+<a href="https://dev.widemeadows.de/tag/canvas/" class="tag-cloud-link tag-link-11 tag-link-position-6" style="font-size: 8pt;" aria-label="Canvas (1 Eintrag)">Canvas</a>
+<a href="https://dev.widemeadows.de/tag/clr/" class="tag-cloud-link tag-link-32 tag-link-position-7" style="font-size: 8pt;" aria-label="CLR (1 Eintrag)">CLR</a>
+<a href="https://dev.widemeadows.de/tag/docker/" class="tag-cloud-link tag-link-70 tag-link-position-8" style="font-size: 12.581818181818pt;" aria-label="docker (2 Einträge)">docker</a>
+<a href="https://dev.widemeadows.de/tag/fpga/" class="tag-cloud-link tag-link-94 tag-link-position-9" style="font-size: 12.581818181818pt;" aria-label="FPGA (2 Einträge)">FPGA</a>
+<a href="https://dev.widemeadows.de/tag/frdm-kl25z/" class="tag-cloud-link tag-link-14 tag-link-position-10" style="font-size: 8pt;" aria-label="FRDM-KL25Z (1 Eintrag)">FRDM-KL25Z</a>
+<a href="https://dev.widemeadows.de/tag/frdm-kl26z/" class="tag-cloud-link tag-link-15 tag-link-position-11" style="font-size: 8pt;" aria-label="FRDM-KL26Z (1 Eintrag)">FRDM-KL26Z</a>
+<a href="https://dev.widemeadows.de/tag/freescale/" class="tag-cloud-link tag-link-16 tag-link-position-12" style="font-size: 8pt;" aria-label="Freescale (1 Eintrag)">Freescale</a>
+<a href="https://dev.widemeadows.de/tag/git/" class="tag-cloud-link tag-link-4 tag-link-position-13" style="font-size: 22pt;" aria-label="git (6 Einträge)">git</a>
+<a href="https://dev.widemeadows.de/tag/gyroscope/" class="tag-cloud-link tag-link-30 tag-link-position-14" style="font-size: 12.581818181818pt;" aria-label="Gyroscope (2 Einträge)">Gyroscope</a>
+<a href="https://dev.widemeadows.de/tag/integration-drift/" class="tag-cloud-link tag-link-34 tag-link-position-15" style="font-size: 12.581818181818pt;" aria-label="Integration Drift (2 Einträge)">Integration Drift</a>
+<a href="https://dev.widemeadows.de/tag/intent/" class="tag-cloud-link tag-link-8 tag-link-position-16" style="font-size: 8pt;" aria-label="Intent (1 Eintrag)">Intent</a>
+<a href="https://dev.widemeadows.de/tag/j-link/" class="tag-cloud-link tag-link-18 tag-link-position-17" style="font-size: 8pt;" aria-label="J-Link (1 Eintrag)">J-Link</a>
+<a href="https://dev.widemeadows.de/tag/linear-programming/" class="tag-cloud-link tag-link-35 tag-link-position-18" style="font-size: 8pt;" aria-label="Linear Programming (1 Eintrag)">Linear Programming</a>
+<a href="https://dev.widemeadows.de/tag/linux/" class="tag-cloud-link tag-link-54 tag-link-position-19" style="font-size: 12.581818181818pt;" aria-label="Linux (2 Einträge)">Linux</a>
+<a href="https://dev.widemeadows.de/tag/magnetometer/" class="tag-cloud-link tag-link-26 tag-link-position-20" style="font-size: 8pt;" aria-label="Magnetometer (1 Eintrag)">Magnetometer</a>
+<a href="https://dev.widemeadows.de/tag/matlab/" class="tag-cloud-link tag-link-13 tag-link-position-21" style="font-size: 18.181818181818pt;" aria-label="Matlab (4 Einträge)">Matlab</a>
+<a href="https://dev.widemeadows.de/tag/mono/" class="tag-cloud-link tag-link-90 tag-link-position-22" style="font-size: 12.581818181818pt;" aria-label="Mono (2 Einträge)">Mono</a>
+<a href="https://dev.widemeadows.de/tag/naismith/" class="tag-cloud-link tag-link-49 tag-link-position-23" style="font-size: 8pt;" aria-label="Naismith (1 Eintrag)">Naismith</a>
+<a href="https://dev.widemeadows.de/tag/opencv/" class="tag-cloud-link tag-link-101 tag-link-position-24" style="font-size: 12.581818181818pt;" aria-label="OpenCV (2 Einträge)">OpenCV</a>
+<a href="https://dev.widemeadows.de/tag/open-intents/" class="tag-cloud-link tag-link-9 tag-link-position-25" style="font-size: 8pt;" aria-label="Open Intents (1 Eintrag)">Open Intents</a>
+<a href="https://dev.widemeadows.de/tag/opensda/" class="tag-cloud-link tag-link-17 tag-link-position-26" style="font-size: 8pt;" aria-label="OpenSDA (1 Eintrag)">OpenSDA</a>
+<a href="https://dev.widemeadows.de/tag/optimization/" class="tag-cloud-link tag-link-114 tag-link-position-27" style="font-size: 12.581818181818pt;" aria-label="Optimization (2 Einträge)">Optimization</a>
+<a href="https://dev.widemeadows.de/tag/pipistrello/" class="tag-cloud-link tag-link-38 tag-link-position-28" style="font-size: 8pt;" aria-label="Pipistrello (1 Eintrag)">Pipistrello</a>
+<a href="https://dev.widemeadows.de/tag/playerstage/" class="tag-cloud-link tag-link-21 tag-link-position-29" style="font-size: 8pt;" aria-label="Player/Stage (1 Eintrag)">Player/Stage</a>
+<a href="https://dev.widemeadows.de/tag/pwm/" class="tag-cloud-link tag-link-47 tag-link-position-30" style="font-size: 8pt;" aria-label="PWM (1 Eintrag)">PWM</a>
+<a href="https://dev.widemeadows.de/tag/python/" class="tag-cloud-link tag-link-102 tag-link-position-31" style="font-size: 12.581818181818pt;" aria-label="Python (2 Einträge)">Python</a>
+<a href="https://dev.widemeadows.de/tag/sensor-fusion/" class="tag-cloud-link tag-link-28 tag-link-position-32" style="font-size: 15.636363636364pt;" aria-label="Sensor Fusion (3 Einträge)">Sensor Fusion</a>
+<a href="https://dev.widemeadows.de/tag/simulink/" class="tag-cloud-link tag-link-46 tag-link-position-33" style="font-size: 8pt;" aria-label="Simulink (1 Eintrag)">Simulink</a>
+<a href="https://dev.widemeadows.de/tag/spartan-6/" class="tag-cloud-link tag-link-39 tag-link-position-34" style="font-size: 8pt;" aria-label="Spartan 6 (1 Eintrag)">Spartan 6</a>
+<a href="https://dev.widemeadows.de/tag/svn/" class="tag-cloud-link tag-link-5 tag-link-position-35" style="font-size: 12.581818181818pt;" aria-label="svn (2 Einträge)">svn</a>
+<a href="https://dev.widemeadows.de/tag/tensorflow/" class="tag-cloud-link tag-link-95 tag-link-position-36" style="font-size: 12.581818181818pt;" aria-label="tensorflow (2 Einträge)">tensorflow</a>
+<a href="https://dev.widemeadows.de/tag/tilt-compensation/" class="tag-cloud-link tag-link-25 tag-link-position-37" style="font-size: 8pt;" aria-label="Tilt Compensation (1 Eintrag)">Tilt Compensation</a>
+<a href="https://dev.widemeadows.de/tag/triad/" class="tag-cloud-link tag-link-29 tag-link-position-38" style="font-size: 8pt;" aria-label="TRIAD (1 Eintrag)">TRIAD</a>
+<a href="https://dev.widemeadows.de/tag/ubuntu/" class="tag-cloud-link tag-link-6 tag-link-position-39" style="font-size: 15.636363636364pt;" aria-label="ubuntu (3 Einträge)">ubuntu</a>
+<a href="https://dev.widemeadows.de/tag/windows/" class="tag-cloud-link tag-link-19 tag-link-position-40" style="font-size: 15.636363636364pt;" aria-label="Windows (3 Einträge)">Windows</a>
+<a href="https://dev.widemeadows.de/tag/xilinx/" class="tag-cloud-link tag-link-37 tag-link-position-41" style="font-size: 18.181818181818pt;" aria-label="Xilinx (4 Einträge)">Xilinx</a>
+<a href="https://dev.widemeadows.de/tag/xilinx-sdk/" class="tag-cloud-link tag-link-41 tag-link-position-42" style="font-size: 12.581818181818pt;" aria-label="Xilinx SDK (2 Einträge)">Xilinx SDK</a>
+<a href="https://dev.widemeadows.de/tag/zedboard/" class="tag-cloud-link tag-link-45 tag-link-position-43" style="font-size: 12.581818181818pt;" aria-label="ZedBoard (2 Einträge)">ZedBoard</a>
+<a href="https://dev.widemeadows.de/tag/zybo/" class="tag-cloud-link tag-link-40 tag-link-position-44" style="font-size: 18.181818181818pt;" aria-label="ZYBO (4 Einträge)">ZYBO</a>
+<a href="https://dev.widemeadows.de/tag/zynq/" class="tag-cloud-link tag-link-43 tag-link-position-45" style="font-size: 15.636363636364pt;" aria-label="Zynq (3 Einträge)">Zynq</a></div>
+</li>
+<li id="recent-comments-3" class="widget widget_recent_comments"><h2 class="widgettitle">Letzte Kommetare</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Vaibhav</span> bei <a href="https://dev.widemeadows.de/2017/08/23/use-your-conda-environment-in-jupyter-notebooks/#comment-65073">Use your conda environment in Jupyter Notebooks</a></li><li class="recentcomments"><span class="comment-author-link">newbee</span> bei <a href="https://dev.widemeadows.de/2014/04/10/frequency-variable-pwm-in-simulink/#comment-52419">Frequency-variable PWM generator in Simulink</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://widemeadows.de' rel='external nofollow' class='url'>Markus</a></span> bei <a href="https://dev.widemeadows.de/2017/01/21/using-tensorflows-supervisor-with-tensorboard-summary-groups/#comment-44527">Using TensorFlow’s Supervisor with TensorBoard summary groups</a></li><li class="recentcomments"><span class="comment-author-link">Toke</span> bei <a href="https://dev.widemeadows.de/2017/01/21/using-tensorflows-supervisor-with-tensorboard-summary-groups/#comment-44454">Using TensorFlow’s Supervisor with TensorBoard summary groups</a></li><li class="recentcomments"><span class="comment-author-link">Bernardo</span> bei <a href="https://dev.widemeadows.de/2014/04/10/frequency-variable-pwm-in-simulink/#comment-39261">Frequency-variable PWM generator in Simulink</a></li></ul></li>
+</ul>
+</div>
+<div id="footer-right" class="sidebar">
+<ul class="sidebar">
+<li>
+<h2 class="widgettitle" style="">Blog durchsuchen</h2>
+<div class="searchform">
+<label for="searchbox">Search:</label>
+<form id="searchform" method="get" action="https://dev.widemeadows.de/">
+<div>
+<input title="Durchsucht den Blog nach einem Begriff" type="text" name="s" id="searchbox" size="20" value="Suchen..." onblur="if (this.value == '') {this.value = 'Suchen...';}" onfocus="if (this.value == 'Suchen...'){this.value = '';}"/>
+<input type="hidden" id="searchsubmit"/>
+</div>
+</form>
+</div>
+</li>
+<li id="calendar-3" class="widget widget_calendar"><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+<caption>August 2017</caption>
+<thead>
+<tr>
+<th scope="col" title="Montag">M</th>
+<th scope="col" title="Dienstag">D</th>
+<th scope="col" title="Mittwoch">M</th>
+<th scope="col" title="Donnerstag">D</th>
+<th scope="col" title="Freitag">F</th>
+<th scope="col" title="Samstag">S</th>
+<th scope="col" title="Sonntag">S</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3" id="prev"><a href="https://dev.widemeadows.de/2017/01/">&laquo; Jan</a></td>
+<td class="pad">&nbsp;</td>
+<td colspan="3" id="next"><a href="https://dev.widemeadows.de/2018/03/">Mrz &raquo;</a></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td colspan="1" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+</tr>
+<tr>
+<td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+</tr>
+<tr>
+<td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+</tr>
+<tr>
+<td>21</td><td>22</td><td><a href="https://dev.widemeadows.de/2017/08/23/" aria-label="Beiträge veröffentlicht am 23. August 2017">23</a></td><td>24</td><td>25</td><td>26</td><td>27</td>
+</tr>
+<tr>
+<td>28</td><td>29</td><td>30</td><td>31</td>
+<td class="pad" colspan="3">&nbsp;</td>
+</tr>
+</tbody>
+</table></div></li><li id="linkcat-33" class="widget widget_links"><h2 class="widgettitle">Self</h2>
+<ul class='xoxo blogroll'>
+<li><a href="https://github.com/sunsided" rel="me">Find me on GitHub</a></li>
+<li><a href="https://plus.google.com/+MarkusMayer-sunside?rel=author" rel="me">Google+</a></li>
+<li><a href="http://stackexchange.com/users/66738/" rel="me" title="My StackExchange profile">Me on Stack­Ex­change</a></li>
+<li><a href="http://blog.defx.de" rel="me" title="My old blog. It&#039;s dead. I&#039;m just linking it for Google.">Ye olde blog</a></li>
+</ul>
+</li>
+<li id="meta-3" class="widget widget_meta"><h2 class="widgettitle">Meta</h2>	<ul>
+<li><a href="https://dev.widemeadows.de/wp-login.php">Anmelden</a></li>
+<li><a href="https://dev.widemeadows.de/feed/">Beitrags-Feed (<abbr title="Really Simple Syndication">RSS</abbr>)</a></li>
+<li><a href="https://dev.widemeadows.de/comments/feed/">Kommentare als <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="https://de.wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>	</ul>
+</li> </ul>
+</div>
+<div class="separate lighter flowbreaker"></div>
+<small>(Generiert in 1,334 Sekunden)</small>
+<p>Zurück nach <a href="#top">oben</a>.</p>
+</div>
+</div>
+<div style="display:none">
+<div class="grofile-hash-map-8936ca940401fd9ce0bb00cde7653fbf">
+</div>
+</div>
+<script>if(document.location.protocol!="https:"){document.location=document.URL.replace(/^http:/i,"https:");}</script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAS3.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushColdFusion.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushClojure.js?ver=20090602'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDelphi.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDiff.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushErlang.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushFSharp.js?ver=20091003'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJavaFX.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushLatex.js?ver=20090613'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushMatlabKey.js?ver=20091209'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushObjC.js?ver=20091207'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPerl.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPowerShell.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPython.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushR.js?ver=20100919'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushRuby.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushScala.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSql.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushVb.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.9b'></script>
+<script type='text/javascript'>(function(){var corecss=document.createElement('link');var themecss=document.createElement('link');var corecssurl="https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";if(corecss.setAttribute){corecss.setAttribute("rel","stylesheet");corecss.setAttribute("type","text/css");corecss.setAttribute("href",corecssurl);}else{corecss.rel="stylesheet";corecss.href=corecssurl;}document.getElementsByTagName("head")[0].insertBefore(corecss,document.getElementById("syntaxhighlighteranchor"));var themecssurl="https://dev.widemeadows.de/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";if(themecss.setAttribute){themecss.setAttribute("rel","stylesheet");themecss.setAttribute("type","text/css");themecss.setAttribute("href",themecssurl);}else{themecss.rel="stylesheet";themecss.href=themecssurl;}document.getElementsByTagName("head")[0].insertBefore(themecss,document.getElementById("syntaxhighlighteranchor"));})();SyntaxHighlighter.config.strings.expandSource='+ Quelltext aufklappen';SyntaxHighlighter.config.strings.help='?';SyntaxHighlighter.config.strings.alert='SyntaxHighlighter\n\n';SyntaxHighlighter.config.strings.noBrush='Keine Syntax-Datei vorhanden für: ';SyntaxHighlighter.config.strings.brushNotHtmlScript='Die Syntax-Datei ist nicht für die „htmlscript” Option konfiguriert: ';SyntaxHighlighter.defaults['pad-line-numbers']=false;SyntaxHighlighter.defaults['toolbar']=false;SyntaxHighlighter.all();</script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-includes/js/comment-reply.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201851'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/academic-bloggers-toolkit/js/frontend.js?ver=4.13.3'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/jetpack/_inc/build/lazy-images/js/lazy-images.min.js?ver=5.8'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2018Decaa'></script>
+<script type='text/javascript'>var WPGroHo={"my_hash":""};</script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.9.9'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/wp-typography/js/jquery.selection.min.js?ver=5.2.4'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/wp-typography/js/clean_clipboard.min.js?ver=5.2.4'></script>
+<script type='text/javascript' src='https://dev.widemeadows.de/wp-includes/js/wp-embed.min.js?ver=4.9.9'></script>
+<script async="async" type='text/javascript' src='https://dev.widemeadows.de/wp-content/plugins/akismet/_inc/form.js?ver=4.0.3'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201851.js' async='async' defer='defer'></script>
+<script type='text/javascript'>_stq=window._stq||[];_stq.push(['view',{v:'ext',j:'1:5.8',blog:'29331146',post:'1804',tz:'1',srv:'dev.widemeadows.de'}]);_stq.push(['clickTrackerInit','29331146','1804']);</script>
+<script type="text/javascript" language="javascript" src="https://dev.widemeadows.de/wp-content/themes/reboot/js/jquery-validate/jquery.validate.pack.js"></script>
+<script type="text/javascript">jQuery(document).ready(function($){$("#commentform").validate({rules:{comment:"required",author:"required",email:{required:true,email:true},url:{required:false,url:true}},errorClass:"invalid",validClass:"valid",errorPlacement:function(error,element){}});});</script>
+</body>
+</html>

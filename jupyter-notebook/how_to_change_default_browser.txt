@@ -1,0 +1,33 @@
+Step 1: To open Anaconda Prompt from the Start Menu and type
+
+jupyter notebook --generate-config
+This will generate the file ~/.jupyter/jupyter_notebook_config.py
+
+Step 2: Edit this file and change the following line (chrome is also is also in a local installation)
+
+c.NotebookApp.browser = u'C:/Home/AppData/Local/Google/Chrome/Application/chrome.exe %s'
+
+---- some may not work, try the other way
+import webbrowser
+webbrowser.register('chrome', None, webbrowser.GenericBrowser('C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'))
+c.NotebookApp.browser = 'chrome'
+
+-- windows version
+-----------------------------------------------------------------------------
+
+You can create jupyter_notebook_config.py by:
+
+jupyter notebook --generate-config
+Then you go to
+
+~/.jupyter/jupyter_notebook_config.py
+and change
+
+# c.NotebookApp.browser = ''
+to for example:
+
+c.NotebookApp.browser = '/usr/bin/google-chrome'
+You can choose which ever browser is installed. You'll find the path for example by typing which firefox Do not forget to delete the #
+
+-- linux version
+

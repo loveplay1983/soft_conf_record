@@ -1,0 +1,3 @@
+https://askubuntu.com/questions/164820/default-screen-magnifier
+
+sudo apt-get install compizconfig-settings-manager python-compizconfig

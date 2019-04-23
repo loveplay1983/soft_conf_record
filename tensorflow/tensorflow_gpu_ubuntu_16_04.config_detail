@@ -1,0 +1,8 @@
+// This note represents the detail process of tensorflow gpu verion installation via conda environment
+
+1. Make sure you have anaconda installed on your ubuntu system
+2. Create the virtual environment via conda create -n [env_name]
+3. To activate the virtual env ( conda activate [env_name] ), to disable it ( deactivate on win; source deactivate on linux )
+4. To use tensorflow gpu version, first install nb_conda and nb_conda_kernels, then we install tensorflow-gpu
+5. Activate conda env and run "jupyter-notebook", you good to go!!! 
+

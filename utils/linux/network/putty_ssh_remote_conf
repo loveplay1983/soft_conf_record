@@ -1,0 +1,8 @@
+1. download putty
+2. set up source port
+3. set up ssh ip and port
+4. open the seesion
+5. configure the browser to socks host and port aswell as "no proxy for localhost, 127.0.0.1", also choose proxy dns when using ...
+ps: 
+* https://www.osyunwei.com/archives/1281.html
+* making the ssh auto-login (make a shortcut of putty and add the following command -load "session_name" -l uname -pw passwd)

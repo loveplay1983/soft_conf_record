@@ -1,0 +1,6 @@
+1. download putty
+2. set up source port
+3. set up ssh ip and port
+4. open the seesion
+5. configure the browser to socks host and port aswell as "no proxy for localhost, 127.0.0.1", also choose proxy dns when using ...
+

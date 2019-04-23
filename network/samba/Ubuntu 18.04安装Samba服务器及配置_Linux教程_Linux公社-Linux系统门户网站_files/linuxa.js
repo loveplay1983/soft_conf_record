@@ -1,0 +1,1 @@
+﻿document.writeln("<a href=\'https://www.apeland.cn/linux/2/164?=linuxgs\' rel=\'nofollow\' target=\'_blank\'><img src=\'/linuxfile/lnhlf.png\' alt=\'\' width=\'1345\' height=\'60\' /></a>");

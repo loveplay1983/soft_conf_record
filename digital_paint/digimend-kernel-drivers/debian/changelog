@@ -1,0 +1,69 @@
+digimend-dkms (10) unstable; urgency=low
+
+  * Bump version number.
+
+ -- Nikolai Kondrashov <spbnick@gmail.com>  Sat, 15 Dec 2018 18:17:23 +0200
+
+digimend-dkms (9) unstable; urgency=low
+
+  * Add support for XP-Pen G640.
+  * Fix support for Ugee M540.
+  * Fix support for Huion WH1409.
+  * Add installation of X.org configuration, which requests the Wacom driver
+    to handle all known compatible tablets, by default. Any X.org
+    configuration for the same tablets in /etc would still override this.
+  * Move installed hid-rebind to /lib/udev
+
+ -- Nikolai Kondrashov <spbnick@gmail.com>  Sat, 15 Dec 2018 17:47:50 +0200
+
+digimend-dkms (8) unstable; urgency=low
+
+  * Rework the UC-Logic driver to support the new Huion tablets, while keeping
+    support of all the other tablets. This brings support for the following
+    tablets (at least):
+    - Huion H430P
+    - Huion H640P
+    - Huion H950P
+    - Huion New 1060 Plus
+    Thank you to Björn Paetzel and Andrey Zabolotnyi for initial
+    implementation and figuring out proximity detection, to Huion for tablet
+    samples and financing the work, and to all the users for testing and bug
+    reports!
+  * Add support for Ugee G5.
+    Thank you for the tablet sample and financing, Neoblast Inc.!
+  * Add support for XP-Pen Deco 01.
+    Thank you for the initial implementation and testing, kodkuce!
+  * Add "dkms_install" and "dkms_uninstall" targets to the Makefile.
+    These should be used now for installing and uninstalling the
+    driver on all non-Debian based distros, as well as for installing and
+    uninstalling the development versions of the driver. Use "install" and
+    "uninstall" only if those didn't work (and report your issue).
+  * Add "dist" target to the Makefile for building tarballs for external
+    packaging. Thank you, Hai Hoang Dang!
+  * Various documentation fixes and improvements.
+
+ -- Nikolai Kondrashov <spbnick@gmail.com>  Sat, 14 Jul 2018 14:00:00 +0300
+
+digimend-dkms (7) unstable; urgency=low
+
+  * Add support for building with v4.4 and newer kernels.
+  * Add support for KYE PenSketch M912. Thank you, Milan Plzik!
+  * Fix possible buffer overflow in hid-uclogic.c. Thank you, Dan Carpenter!
+  * Ensure hid-rebind looks for programs in /sbin and /usr/sbin. Fixes #49.
+  * Re-enable tablet on resume.
+    Fixes UC-Logic tablets not working after a suspend/resume cycle.
+  * Add support for KYE EasyPen M406XE. Thank you, Andrey Alekseenko!
+  * Add support for XP-Pen G540. Thank you, slawkis!
+  * Add support for Ugee EX07(S)/XP-Pen star05.
+  * Add support for Ugee M540, which reuses VID:PID of UC-Logic WP5540U.
+  * Add support for Ugee 2150. Thank you, Pierre-Marc Jobin!
+  * Add support for ViewSonic PD1011, aka Signotec Delta PD 10.1.
+  * Fix several issues with the Debian package. Thank you, Martin Owens!
+
+ -- Nikolai Kondrashov <spbnick@gmail.com>  Sun, 11 Feb 2018 15:58:45 +0200
+
+digimend-dkms (6) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Nikolai Kondrashov <spbnick@gmail.com>  Sun, 05 Apr 2015 15:38:04 +0300
