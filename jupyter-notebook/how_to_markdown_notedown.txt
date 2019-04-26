@@ -1,0 +1,5 @@
+1. pip install https://github.com/mli/notedown/tarball/master
+2. add the following line to startup jn 
+	jupyter notebook --NotebookApp.contents_manager_class='notedown.NotedownContentsManager'
+3. or you can add the following line to jn conf file   
+	c.NotebookApp.contents_manager_class = 'notedown.NotedownContentsManager'	
