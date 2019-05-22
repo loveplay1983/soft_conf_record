@@ -1,3 +1,4 @@
 1. git log --pretty=online  or git reflog
 2. git reset --hard commitid
+3. git push -f origin master # force push to remote repository
 
